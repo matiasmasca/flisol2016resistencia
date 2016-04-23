@@ -1,0 +1,66 @@
+- Abrir los ejemplos en Sublime.
+
+- abrir las cuentas en diferentes perfiles.
+- abrir los servicios.
+- preparar power point.
+- Abrir los Archivos en Sublime Text.
+- Ejecutar en orden en consola.
+================
+
+BDD:
+cucumber features/crear_proceso.feature
+
+http://tfa-vox.herokuapp.com/organizers/1/selection_processes/new
+
+TDD
+Modelo:
+rspec spec/models/selection_process_spec.rb
+
+Vista:
+rspec spec/views/selection_processes/
+
+Controller: 
+rspec spec/controllers/selection_process_controller_spec.rb
+
+Routing:
+rspec spec/routing/selection_processes_routing_spec.rb
+
+Helper:
+rspec spec/helpers/selection_process_helper_spec.rb 
+
+- Coverall.io: https://coveralls.io/r/matiasmasca/vox
+- CodeClimate: https://codeclimate.com/github/matiasmasca/vox
+
+TRAVIS-CI
+https://travis-ci.org/matiasmasca/vox
+
+Ejemplo MASTER: https://travis-ci.org/matiasmasca/vox/builds/48383522 
+
+
+DEMO
+VOX.
+# USUARIOS
+jurado1@go.com
+jurado2@go.com
+jurado3@go.com
+
+# Administrador:
+donramon@chavo.mx
+
+# Organizador:
+unemail@go.com
+
+Novedades.
+    https://terciar-novedades.herokuapp.com/
+    Usuario: don@deroche.com pass: clave12345
+    Usuario: admin@estudio.com pass: clave12345
+    Esta DEMO se resetea sin aviso previo, ya que es sólo para pruebas.
+
+
+
+
+UTN> BitYAtomo
+
+
+proxyret.unne.edu.ar
+

@@ -1,0 +1,5 @@
+pendo.guides=[];
+pendo.normalizedUrl="http://travis-ci.org/matiasmasca/Novedades";
+pendo.lastGuideStepSeen={"isMultiStep":false,"state":""};
+pendo.guideWidget={"enabled":false,"hidePoweredBy":false,"data":{}};
+pendo.olark=false;

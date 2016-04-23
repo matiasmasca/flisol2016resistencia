@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>matiasmasca/Novedades - Travis CI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- base href="https://travis-ci.org/" -->
+<meta name="travis/config/environment" content="%7B%22useV3API%22:false,%22modulePrefix%22:%22travis%22,%22environment%22:%22production%22,%22baseURL%22:%22/%22,%22locationType%22:%22auto%22,%22defaultTitle%22:%22Travis%20CI%20-%20Test%20and%20Deploy%20Your%20Code%20with%20Confidence%22,%22EmberENV%22:%7B%22FEATURES%22:%7B%7D,%22ENABLE_DS_FILTER%22:true%7D,%22APP%22:%7B%22name%22:%22travis%22,%22version%22:%220.0.0+%22%7D,%22apiEndpoint%22:%22https://api.travis-ci.org%22,%22sourceEndpoint%22:%22https://github.com%22,%22pusher%22:%7B%22key%22:%225df8ac576dcccf4fd076%22,%22host%22:%22ws.pusherapp.com%22%7D,%22pro%22:false,%22enterprise%22:false,%22endpoints%22:%7B%22sshKey%22:null,%22caches%22:%22true%22%7D,%22intervals%22:%7B%22updateTimes%22:1000%7D,%22statusPageStatusUrl%22:%22https://pnpcptp8xh9k.statuspage.io/api/v2/status.json%22,%22githubOrgsOauthAccessSettingsUrl%22:%22https://github.com/settings/connections/applications/f244293c729d5066cf27%22,%22ajaxPolling%22:false,%22ember-cli-mirage%22:%7B%22enabled%22:false,%22usingProxy%22:false,%22useDefaultPassthroughs%22:true%7D,%22contentSecurityPolicy%22:%7B%22default-src%22:%22'none'%22,%22script-src%22:%22'self'%22,%22font-src%22:%22'self'%20https://fonts.googleapis.com/css%20https://fonts.gstatic.com%22,%22connect-src%22:%22'self'%20https://api.travis-ci.org%20ws://ws.pusherapp.com%20wss://ws.pusherapp.com%20http://sockjs.pusher.com%20https://s3.amazonaws.com/archive.travis-ci.com/%20https://s3.amazonaws.com/archive.travis-ci.org/%22,%22img-src%22:%22'self'%20data:%20https://www.gravatar.com%20http://www.gravatar.com%22,%22style-src%22:%22'self'%20https://fonts.googleapis.com%22,%22media-src%22:%22'self'%22,%22frame-src%22:%22'self'%20https://api.travis-ci.org%22%7D,%22something%22:%22test%22,%22exportApplicationGlobal%22:false,%22ember-cli-pendo%22:%7B%22apiKey%22:%227c222902-d493-4b67-5869-22f636b6abc6%22%7D,%22gaCode%22:%22UA-24868285-1%22%7D">
+
+    <link href="matiasmasca_Novedades%20-%20Travis%20CI_archivos/css.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="matiasmasca_Novedades%20-%20Travis%20CI_archivos/vendor-d41d8cd98f00b204e9800998ecf8427e.css">
+    <link rel="stylesheet" href="matiasmasca_Novedades%20-%20Travis%20CI_archivos/travis-b5d85cff6eb35510663e0d4c57840e7d.css">
+    <link rel="mask-icon" href="https://cdn.travis-ci.org/images/favicon-c566132d45ab1a9bcae64d8d90e4378a.svg" color="black">
+
+    
+  <script src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/7c222902-d493-4b67-5869-22f636b6abc6" async="" type="text/javascript"></script><link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC7lBMVEUAAACNzaJ0wY5VtHWLzaCGyJxbt3pat3mHyp0AAAB5xZJ5w5FzwY1ywIuBxpiByJh/w5BCrWVBrGSHyp15w5B3xJBPsnBOsW9/v3+Ax5hYtXdZt3iUzaSPzaWZzKaDyZllvIJLsGyEyZt1wI1pvYViun9wv4xHr2lErGYAVVVhuX51wo+QzKZMsG1ct3p7xZOBx5iSzKiX0aKSzaSPzqRZtnhvv4p2w5Biu39TtHKMy6KR0KVHr2lvwImOzaOIyp6FyZuAyJdku4CCyJmSzqZ4xJFLsW1DrWZduHuHy6GHyZ1mu4FArGRDrWZmu4KHyZw9q2E4qV06ql9jvICMzaGe1bA6ql5Ermeg1rHm9Ora7+Hh8udvwYns9/D///9zwo1buHpzw418xpT7/fxpvoVPs29ywox9x5WHy51duXtQs3H9/v1cuXr4/PlBrWRgun1BrWX5/PrN6db+//7k9OnC5c2s27yZ06xFr2hzw46l2Lbj8+hMsm5Hr2nS69p9x5ZlvYJ0w45Nsm5JsGt6xpPK6NTr9+/c8OJRtHFhu3/J6NPo9e3L6NR7xpRKsWxTtHPL6dWOzqPB5MzI6NJ4xJFStHI8q2DW7d7E5s/8/vz9/v7m9Ou64ceo2rib1K6EyZp5xZKByZma1K3M6da54cau3L2CyZk+rGKt3Ly44MU5qV5ovoSGy52o2bi+48ro9ezz+vW34MWg1rLe8eT6/ftkvIHv+PKV0and8OTU7NxTtXO948rk8+mY0qu138PF5tCw3b/G5tFhu35UtXSKzKDx+fR6xZLg8ubt9/D1+/f2+/dArGN/yJex3b+W0alMsW1nvYOd1a+z3sFStHNPs3BXtnaX0qtfun05qV3w+fO64cad1bC74sir27qAyJdZt3i54MWT0KfI59KJzJ9LsWyj17TV7d3P6tia063b7+LH59Ga06w/rGO038LT7NtmvYLn9eu/48t1w49Yt3c8q2F4xZE7ql+LzKCY06s+q2I5Da3uAAAAUHRSTlMAYM/2YV3y8mABubzK0JqeHv7+Irm69vcEqfT0PlIUod33m16sGlD8/QPsyjz66LSkIxY4VPnYxu3+aEH+12GDlqfdmT/D/PzuMX/m/v7jd2CHTsIAAAABYktHRF4E1mG7AAAAB3RJTUUH3wIXCgcI1L+jPwAAAodJREFUOMutk2VU1EEUxREs7BYUsDuxA7ubSywYPImVZZdw2SUURVQwEARFQVowiF0QlAUUsQUbEUXFbsXCjm8O/4VlF/WD53g/zcz9nfPmvjejpfUPqqOtYwqY6mjX/aNdrz7MzC0sLS3MzdCg4W+2biOelfXCRZwWW1vxGuvWAppgiQ0tBSdbsrFDU02/GewdiPjLHAVOfKGIyFmA5up+i5YursQAN4iWQ8wAche2aq0GtIFE6uHp5S1cIRK6CVf6eK4iCdqqAe1W2/my4mvITyRcS35s6btufftqV0+/A+Af4LNhI23C5kBskQYF+2wNATrq63GAAUIF26RUKQn8tiOMW0p37AyHAQcYRihdpl2VKSOrd9IIQyWAKLaLjpHExsXvTkhI3BMXuzcmmh1FwbCqxL79SS7J0JCpbVJKalUJIxkglqelH5BkZDqzHmVmHDyU7iQXAzIjZYxOnZFFpBBm51CQZe5hUvDDjzAwr0vX6qDdcJQlkOXFKlg4f4d84BhRBrqr+tQD8UTHgRNhOJmKU66nz5wtoBT0rOlkr0Kic+cvUKHY9eKly1xGhbx3nxqgb/IVKogskpslEtnjanHitZLr6Kc2i/4DcINlK03zIPK4GXDLCrg9UOM9DEJgUWTZnbte9+4/eCjIobJHGGxgrLKHDB0Ga5I+5lokzpaFeD15iuEYoQJGYtToZ8/lCMjJf5EVTS9Dld0cowLGmlTu17+KrpqSovx1yRuMU7vC+LfwLuc8G/47DnlfamKsfskJvAp3NtEPwQGA48fcYvaBJmo+60mo+PT5Cyv0Nf4bm+XkKVNr/5xpvOkzYFr8/UfCT8yc9ZfPOXvOXGDe/AVa/1W/ANqKEiJ0e/INAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE1LTAyLTIzVDEwOjA3OjA4KzAxOjAwTDBZxgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNS0wMi0yM1QxMDowNzowOCswMTowMD1t4XoAAAAASUVORK5CYII=" type="image/png" rel="icon"></head>
+  <body id="home" class="ember-application">
+    <noscript>
+      <div style="width: 60%; margin: auto;">
+        <img src="https://cdn.travis-ci.org/images/travis-mascot-150-3791701416eeee8479e23fe4bb7edf4f.png" alt="Travis CI mascot" style="float: left; margin: 1em 3em;">
+        <div>
+          <h1>Hey there!</h1>
+          <p>Looks like you have JavaScript disabled.</p>
+          <p>The Travis CI webclient needs JavaScript to work properly.</p>
+          <h2>Please enable JavaScript to get the best Travis CI experience.</h2>
+          <h3>Thank you!</h3>
+        </div>
+      </div>
+    </noscript>
+    
+
+    <script src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/pa.js" async="" type="text/javascript"></script><script src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/ga.js" async="" type="text/javascript"></script><script src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/vendor-d789b9f1d906a746ccc023c9c81d7f35.js"></script>
+    <script src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/travis-7138c1cec39a8327593cf6a61bfa2b20.js"></script>
+
+    
+
+    <a href="javascript:void(0)" class="feedback-button" id="userlikeCustomTab" data-right="20" data-bottom="50" data-orientation="top">Do you have a question?</a>
+  
+
+<div class="ember-view" id="ember587"><div class="ember-view application" id="ember607">  <div class="main ember-view" id="ember616"><div class="wrapper non-centered">
+
+  <header class="top" id="top">
+    <div class="topbar  ">
+  <h1 class="logo" id="logo"><a class="ember-view active" alt="Travis CI" href="https://travis-ci.org/" id="ember633">Travis CI</a></h1>
+
+  <div class="navigation-toggle">
+    <button data-ember-action="648" class="tofuburger" id="tofuburger" type="button">Toggle Menu</button>
+  </div>
+
+
+    <div class="ember-view broadcast" id="ember657"><span data-ember-action="658" class="icon-broadcast  " title="broadcasts">
+  <svg alt="Broadcast tower" xml:space="preserve" viewBox="0 0 15 21.625" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-broadcast" version="1.1">
+  <g class="tower-path">
+    <circle r="1.775" cy="6.733" cx="7.503" class="path"></circle>
+    <polyline points="8.303,8.508 13.627,21.206 4.728,14.441 	" class="path"></polyline>
+    <polyline points="6.828,8.508 1.528,21.206 10.427,14.441 	" class="path"></polyline>
+    <line y2="20.673" x2="7.5" y1="8.508" x1="7.5" class="path"></line>
+  </g>
+  <g class="radio-wave--outer">
+    <path d="M2.454,11.81C1.247,10.557,0.5,8.859,0.5,6.981c0-2.936,1.812-5.441,4.375-6.481" class="path"></path>
+    <path d="M12.668,11.668C13.8,10.43,14.5,8.792,14.5,6.981c0-2.936-1.812-5.441-4.375-6.481" class="path"></path>
+  </g>
+  <g class="radio-wave--inner">
+    <path d="M3.751,9.161C3.356,8.506,3.123,7.743,3.123,6.922c0-1.836,1.133-3.402,2.735-4.052" class="path"></path>
+    <path d="M11.339,8.986c0.336-0.615,0.537-1.313,0.537-2.064c0-1.836-1.133-3.402-2.735-4.052" class="path"></path>
+  </g>
+  </svg>
+
+</span>
+</div>
+
+    <ul class="broadcasts ">
+      <li><p>There are no broadcasts</p></li>
+    </ul>
+
+  <nav class="navigation " id="navigation">
+    <ul>
+
+        <li><a class="navigation-anchor" title="Travis CI Blog" href="https://blog.travis-ci.com/">Blog</a></li>
+        <li><a class="navigation-anchor" title="Travis CI Status" href="https://www.traviscistatus.com/">Status</a></li>
+        <li>
+          <span class="navigation-anchor">Help</span>
+          <ul class="navigation-nested">
+            <li><a href="https://docs.travis-ci.com/">Docs</a></li>
+            <li><a alt="Imprint" href="https://docs.travis-ci.com/imprint.html">Imprint</a></li>
+          </ul>
+        </li>
+
+<!---->
+      <li class="profile menu signed-out">
+<!----><a class="navigation-anchor signed-in ember-view" href="https://travis-ci.org/profile" id="ember659">            Matías Mascazzini
+            <span class="ember-view avatar" id="ember707"><span data-initials="MM" aria-hidden="true" class="pseudo-avatar"></span>
+<img src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/064d3016db58b512fcb6cadb3129ad24.jpeg" alt="avatar" class="real-avatar">
+</span>
+</a><!---->          <ul class="navigation-nested">
+            <li>
+              <a class="signed-in ember-view" href="https://travis-ci.org/profile" id="ember708">Accounts</a>
+            </li>
+<!---->            <li>
+              <a data-ember-action="709" href="https://travis-ci.org/">Sign Out</a>
+            </li>
+          </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!---->
+  </header>
+
+  <ul class="ember-view flash" id="ember730"><!----></ul>
+
+  <div class="wrapper-main">
+    <div role="main" id="main">
+        <div class="ember-view" id="ember866">
+    <article class="repo-header">
+      <header>
+        <h1 class="repo-title"><a class="ember-view" href="https://travis-ci.org/matiasmasca" id="ember867">matiasmasca</a> / <a class="ember-view active" href="https://travis-ci.org/matiasmasca/Novedades" id="ember900">Novedades</a></h1>
+        <div class="repo-gh">
+          <a title="Novedades on Github" href="https://github.com/matiasmasca/Novedades">Novedades on Github</a>
+        </div>
+        <div class="repo-badge">
+          <a data-ember-action="901" class="open-popup" name="status-images" title="build status image" id="status-image-popup" href="#">
+            <img alt="build:passed" src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/Novedades.svg">
+          </a>
+        </div>
+      </header>
+      <main class="repo-main">
+        <div class="repo-navigation">
+          <div class="ember-view option-button" id="ember916"><a data-ember-action="917" title="Show more options" type="" class="option-display">
+  <span class="label-align">More options</span>
+  <span class="option-tofu"></span>
+</a>
+<ul class="option-dropdown">
+    <li>
+      <a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/settings" id="ember1118">Settings</a>
+    </li>
+  <li>
+    <a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/requests" id="ember918">Requests</a>
+  </li>
+    <li>
+      <a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/caches" id="ember1119">Caches</a>
+    </li>
+</ul>
+</div>
+
+          <nav class="ember-view tabnav" role="tablist" id="ember943"><ul class="tab tabs--main">
+  <li class="active" id="tab_current">
+<a class="ember-view active" href="https://travis-ci.org/matiasmasca/Novedades" id="ember944">        Current
+</a>  </li>
+  <li id="tab_branches">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/branches" id="ember945">        Branches
+</a>  </li>
+  <li id="tab_builds">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/builds" id="ember962">        Build History
+</a>  </li>
+  <li id="tab_pull_requests">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/pull_requests" id="ember981">        Pull Requests
+</a>  </li>
+  <li class="" id="tab_build">
+        <span class="tab-arrow"></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/builds/109408544" id="ember990">          Build #131
+</a>  </li>
+  <li id="tab_job">
+<!---->  </li>
+  <li id="tab_settings">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/settings" id="ember999">        Settings
+</a>  </li>
+  <li class="" id="tab_requests">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/requests" id="ember1024">        Requests
+</a>  </li>
+<!---->
+  <li id="tab_request">
+<!---->  </li>
+</ul>
+</nav>
+        </div>
+        <div class="tabbody repo-body">
+          <div class="ember-view green" id="ember1033">
+  <section class="ember-view build-header passed" id="ember1272"><div class="build-commit">
+  <h2 class="build-title passed">
+    <span class="ember-view status-icon icon passed" title="Job passed" aria-label="Job passed" id="ember1273">    <svg xml:space="preserve" viewBox="-1 -1 17 16" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-passed" version="1.1">
+    <g><polyline points="14.5,1.5 6.499,13.716 0.5,8.78 " id="passed" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"></polyline></g>
+    </svg>
+
+<!---->
+<!---->
+<!---->
+<!----></span>
+      <small title="master" class="commit-branch">master</small>
+      Add Beerpay badge
+  </h2>
+  <div class="commit-info">
+
+<!---->    <ul class="list-icon">
+      <li>
+        <a href="https://github.com/matiasmasca/Novedades/commit/031aa6c34e9c57ef53ec00ca259a69aecf6c6725" title="See the commit on GitHub" class="commit-commit">
+          <span aria-hidden="true" class="icon-github"></span>
+          <span class="label-align">Commit 031aa6c</span></a>
+      </li>
+      <li>
+            <a href="https://github.com/matiasmasca/Novedades/compare/aeaef145fc1e...031aa6c34e9c" title="See the diff on GitHub" class="commit-compare">
+              <span aria-hidden="true" class="icon-github"></span>
+              <span class="label-align">Compare aeaef14..031aa6c</span></a>
+      </li>
+    </ul>
+    <p class="commit-author">
+        <span class="ember-view avatar--small" id="ember1274"><span data-initials="MM" aria-hidden="true" class="pseudo-avatar"></span>
+<img src="matiasmasca_Novedades%20-%20Travis%20CI_archivos/064d3016db58b512fcb6cadb3129ad24_002.jpeg" alt="avatar" class="real-avatar">
+</span>
+        <span class="label-align">Matías Mascazzini authored and committed</span>
+<!---->    </p>
+  </div>
+</div>
+
+<div class="build-info">
+  <h3 class="build-status passed">
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/builds/109408544" id="ember1275">        <span class="ember-view request-icon icon push passed" id="ember1284">    <svg xml:space="preserve" viewBox="0 0 15 15" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-push" version="1.1">
+    <g id="push">
+    <circle r="2.854" cy="7.354" cx="7.505"></circle>
+    <line y2="7.354" x2="10.349" y1="7.354" x1="14.5"></line>
+    <line y2="7.354" x2="0.5" y1="7.354" x1="4.651"></line>
+    </g>
+    </svg>
+
+<!---->
+<!----></span> #131 passed</a>
+  </h3>
+  <ul class="list-icon">
+    <li title="4 min" class="commit-stopwatch">
+      <span aria-hidden="true" class="icon-stopwatch"></span>
+      <span class="label-align">Elapsed time <time datetime="PT240S">4 min</time></span></li>
+<!---->    <li title="February 15, 2016 14:58:11" class="commit-calendar">
+      <span aria-hidden="true" class="icon-calendar"></span>
+      <time datetime="2016-02-15T17:58:11Z" class="label-align">2 months ago</time></li>
+  </ul>
+</div>
+<div class="build-tools">
+    <div class="ember-view repo-main-tools" id="ember1295">  <div class="ember-view" id="ember1306"><!---->
+    <a data-ember-action="1307" title="Restart Build" class="button-circle-trigger">
+      Trigger build
+    </a>
+</div>
+</div>
+</div>
+</section>
+
+    <div class="ember-view job-log" id="ember1318">    <div class="ember-view" id="ember1339"><div class="ember-view" id="ember1348"><div class="popup" id="remove-log-popup">
+  <a data-ember-action="1349" title="close popup" class="close">close</a>
+  <h3 class="popup-title h2--red">This action will remove the log permanently!</h3>
+  <p class="popup-text text-big">Do you want to continue?</p>
+  <div class="buttons">
+    <a data-ember-action="1350" class="button-delete">Yes, remove log</a>
+    <a data-ember-action="1351" class="button-cancel">Oops, cancel</a>
+  </div>
+</div>
+</div>
+
+<section class="log" id="log-container">
+
+<!---->
+<!---->
+  <div class="log-container ">
+    <a data-ember-action="1352" class="toggle-log-button " title="Display the log" href="#">
+      <span class="ember-view icon-eye" id="ember1361"><svg xml:space="preserve" height="18" width="20" viewBox="2 -1 17 17" y="0px" x="0px">
+  <g>
+    <path d="M17.4,9.6c-0.1-0.2-3.3-4.1-7.4-4.1s-7.3,4-7.4,4.1c-0.2,0.2-0.2,0.6,0,0.8c0.1,0.2,3.3,4.1,7.4,4.1
+      s7.3-4,7.4-4.1C17.6,10.2,17.6,9.8,17.4,9.6z M10,13.2c-2.8,0-5.2-2.3-6.1-3.2C4.8,9.1,7.2,6.8,10,6.8c2.8,0,5.2,2.3,6.1,3.2
+      C15.2,10.9,12.8,13.2,10,13.2z"></path>
+    <circle cy="10" cx="10" r="2.5"></circle>
+  </g>
+</svg>
+</span>
+      <span class="label-align">View log</span></a>
+
+    <div class="log-main  ">
+      <div class="log-header">
+        <a data-ember-action="1362" class="toggle-log-button--dark hidden" title="Display the log" href="#"><span class="ember-view icon-eye" id="ember1363"><svg xml:space="preserve" height="18" width="20" viewBox="2 -1 17 17" y="0px" x="0px">
+  <g>
+    <path d="M17.4,9.6c-0.1-0.2-3.3-4.1-7.4-4.1s-7.3,4-7.4,4.1c-0.2,0.2-0.2,0.6,0,0.8c0.1,0.2,3.3,4.1,7.4,4.1
+      s7.3-4,7.4-4.1C17.6,10.2,17.6,9.8,17.4,9.6z M10,13.2c-2.8,0-5.2-2.3-6.1-3.2C4.8,9.1,7.2,6.8,10,6.8c2.8,0,5.2,2.3,6.1,3.2
+      C15.2,10.9,12.8,13.2,10,13.2z"></path>
+    <circle cy="10" cx="10" r="2.5"></circle>
+  </g>
+</svg>
+</span>Hide log</a>
+          <a data-ember-action="1364" title="Remove the log" class="remove-log-button open-popup">
+            <span aria-hidden="true" class="icon-remove-log"></span>Remove log</a>
+        <a href="https://api.travis-ci.org/jobs/109408547/log.txt?deansi=true" title="Display the log in plaintext" class="download-log-button">
+          <span aria-hiden="true" class="icon-download-log"></span>Raw log</a>
+      </div>
+      <div class="log-body">
+          <a data-ember-action="1365" class="log-tail" id="tail" href="#">
+            <span class="tail-status"></span>
+            <span class="tail-label">
+                Scroll to End of Log
+            </span>
+          </a>
+
+        <pre class="ansi" id="log"><p><a></a><span id="1-0">Using worker: worker-linux-docker-1ae2ec9f.prod.travis-ci.org:travis-linux-16</span></p><p><a></a><span id="1-1"></span></p><div class="fold-start fold active" id="fold-start-system_info"><span class="fold-name">system_info</span><p><a></a><span class="yellow bold" id="1-3">Build system information</span><span id="1-4"></span></p><p><a></a><span id="1-5">Build language: ruby</span></p><p><a></a><span id="1-6">Build group: stable</span></p><p><a></a><span id="1-7">Build dist: precise</span></p><p><a></a><span class="blue bold" id="1-8">Build image provisioning date and time</span><span id="1-9"></span></p><p><a></a><span id="1-10">Thu Feb  5 15:09:33 UTC 2015</span></p><p><a></a><span class="blue bold" id="1-11">Operating System Details</span><span id="1-12"></span></p><p><a></a><span id="1-13">Distributor ID:	Ubuntu</span></p><p><a></a><span id="1-14">Description:	Ubuntu 12.04.5 LTS</span></p><p><a></a><span id="1-15">Release:	12.04</span></p><p><a></a><span id="1-16">Codename:	precise</span></p><p><a></a><span class="blue bold" id="1-17">Linux Version</span><span id="1-18"></span></p><p><a></a><span id="1-19">3.13.0-29-generic</span></p><p><a></a><span class="blue bold" id="1-20">Cookbooks Version</span><span id="1-21"></span></p><p><a></a><span id="1-22">a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e</span></p><p><a></a><span class="blue bold" id="1-23">GCC version</span><span id="1-24"></span></p><p><a></a><span id="1-25">gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3</span></p><p><a></a><span id="1-26">Copyright (C) 2011 Free Software Foundation, Inc.</span></p><p><a></a><span id="1-27">This is free software; see the source for copying conditions.  There is NO</span></p><p><a></a><span id="1-28">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span></p><p><a></a><span id="1-29"></span></p><p><a></a><span class="blue bold" id="1-30">LLVM version</span><span id="1-31"></span></p><p><a></a><span id="1-32">clang version 3.4 (tags/RELEASE_34/final)</span></p><p><a></a><span id="1-33">Target: x86_64-unknown-linux-gnu</span></p><p><a></a><span id="1-34">Thread model: posix</span></p><p><a></a><span class="blue bold" id="1-35">Pre-installed Ruby versions</span><span id="1-36"></span></p><p><a></a><span id="1-37">ruby-1.9.3-p551</span></p><p><a></a><span class="blue bold" id="1-38">Pre-installed Node.js versions</span><span id="1-39"></span></p><p><a></a><span id="1-40">v0.10.36</span></p><p><a></a><span class="blue bold" id="1-41">Pre-installed Go versions</span><span id="1-42"></span></p><p><a></a><span id="1-43">1.4.1</span></p><p><a></a><span class="blue bold" id="1-44">Redis version</span><span id="1-45"></span></p><p><a></a><span id="1-46">redis-server 2.8.19</span></p><p><a></a><span class="blue bold" id="1-47">riak version</span><span id="1-48"></span></p><p><a></a><span id="1-49">2.0.2</span></p><p><a></a><span class="blue bold" id="1-50">MongoDB version</span><span id="1-51"></span></p><p><a></a><span id="1-52">MongoDB 2.4.12</span></p><p><a></a><span class="blue bold" id="1-53">CouchDB version</span><span id="1-54"></span></p><p><a></a><span id="1-55">couchdb 1.6.1</span></p><p><a></a><span class="blue bold" id="1-56">Neo4j version</span><span id="1-57"></span></p><p><a></a><span id="1-58">1.9.4</span></p><p><a></a><span class="blue bold" id="1-59">RabbitMQ Version</span><span id="1-60"></span></p><p><a></a><span id="1-61">3.4.3</span></p><p><a></a><span class="blue bold" id="1-62">ElasticSearch version</span><span id="1-63"></span></p><p><a></a><span id="1-64">1.4.0</span></p><p><a></a><span class="blue bold" id="1-65">Installed Sphinx versions</span><span id="1-66"></span></p><p><a></a><span id="1-67">2.0.10</span></p><p><a></a><span id="1-68">2.1.9</span></p><p><a></a><span id="1-69">2.2.6</span></p><p><a></a><span class="blue bold" id="1-70">Default Sphinx version</span><span id="1-71"></span></p><p><a></a><span id="1-72">2.2.6</span></p><p><a></a><span class="blue bold" id="1-73">Installed Firefox version</span><span id="1-74"></span></p><p><a></a><span id="1-75">firefox 31.0esr</span></p><p><a></a><span class="blue bold" id="1-76">PhantomJS version</span><span id="1-77"></span></p><p><a></a><span id="1-78">1.9.8</span></p><p><a></a><span class="blue bold" id="1-79">ant -version</span><span id="1-80"></span></p><p><a></a><span id="1-81">Apache Ant(TM) version 1.8.2 compiled on December 3 2011</span></p><p><a></a><span class="blue bold" id="1-82">mvn -version</span><span id="1-83"></span></p><p><a></a><span id="1-84">Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)</span></p><p><a></a><span id="1-85">Maven home: /usr/local/maven</span></p><p><a></a><span id="1-86">Java version: 1.7.0_76, vendor: Oracle Corporation</span></p><p><a></a><span id="1-87">Java home: /usr/lib/jvm/java-7-oracle/jre</span></p><p><a></a><span id="1-88">Default locale: en_US, platform encoding: ANSI_X3.4-1968</span></p><p><a></a><span id="1-89">OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"</span></p></div><div class="fold-end" id="fold-end-system_info"></div><p><a></a><span id="1-91"></span></p><div class="fold-start fold active" id="fold-start-git.checkout"><span class="fold-name">git.checkout</span><p><a></a><span title="This command finished after 0.43 seconds." class="duration" id="1-93">0.43s</span><span id="1-94">$ git clone --depth=50 --branch=master https://github.com/matiasmasca/Novedades.git matiasmasca/Novedades</span></p><p><a></a><span id="1-95">Cloning into 'matiasmasca/Novedades'...</span></p><p><a></a><span id="1-96">remote: Counting objects: 950, done.</span></p><p><a></a><span class="clears" id="1-197"></span><span id="1-198">remote: Compressing objects: 100% (426/426), done.</span></p><p><a></a><span class="clears" id="1-295"></span><span id="1-296">remote: Total 950 (delta 542), reused 891 (delta 510), pack-reused 0</span></p><p><a></a><span class="clears" id="1-300"></span><span id="1-301">Receiving objects: 100% (950/950), 1.03 MiB | 0 bytes/s, done.</span></p><p><a></a><span class="clears" id="1-376"></span><span id="1-377">Resolving deltas: 100% (542/542), done.</span></p><p><a></a><span id="1-378">Checking connectivity... done.</span></p><p><a></a><span id="1-379"></span><span id="1-380"></span></p><p><a></a><span id="1-381">$ cd matiasmasca/Novedades</span></p><p><a></a><span id="1-382">$ git checkout -qf 031aa6c34e9c57ef53ec00ca259a69aecf6c6725</span></p></div><div class="fold-end" id="fold-end-git.checkout"></div><p><a></a><span id="1-384"></span></p><p><a></a><span class="yellow bold" id="1-385">This job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.</span><span id="1-386"></span></p><p><a></a><span class="yellow bold" id="1-387">If you require sudo, add 'sudo: required' to your .travis.yml</span><span id="1-388"></span></p><p><a></a><span class="yellow bold" id="1-389">See https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.</span><span id="1-390"></span></p><p><a></a><span id="1-391"></span></p><p><a></a><span class="yellow bold" id="1-392">Setting environment variables from repository settings</span><span id="1-393"></span></p><p><a></a><span id="1-394">$ export SECURE=[secure]</span></p><p><a></a><span id="1-395">$ export COVERALLS=[secure]</span></p><p><a></a><span id="1-396"></span></p><p><a></a><span class="yellow bold" id="1-397">Setting environment variables from .travis.yml</span><span id="1-398"></span></p><p><a></a><span id="1-399">$ export repo_token=COVERALLS</span></p><p><a></a><span id="1-400"></span></p><p><a></a><span title="This command finished after 0.00 seconds." class="duration" id="1-401">0.00s</span><span id="1-402"></span><span id="1-403"></span></p><p><a></a><span title="This command finished after 0.00 seconds." class="duration" id="1-404">0.00s</span><span id="1-405"></span><span id="1-406"></span></p><div class="fold-start fold active" id="fold-start-rvm"><span class="fold-name">rvm</span><p><a></a><span title="This command finished after 0.32 seconds." class="duration" id="1-408">0.32s</span><span id="1-409">$ rvm use ruby-2.2.0 --install --binary --fuzzy</span></p><p><a></a><span class="green" id="1-410">Using /home/travis/.rvm/gems/ruby-2.2.0</span><span id="1-411"></span></p><p><a></a><span id="1-412"></span><span id="1-413"></span></p></div><div class="fold-end" id="fold-end-rvm"></div><p><a></a><span id="1-415">$ export BUNDLE_GEMFILE=$PWD/Gemfile</span></p><p><a></a><span id="1-416">$ ruby --version</span></p><p><a></a><span id="1-417">ruby 2.2.0p0 (2014-12-25 revision 49005) [x86_64-linux]</span></p><p><a></a><span id="1-418">$ rvm --version</span></p><p><a></a><span id="1-419">rvm
+ 1.26.10 (latest-minor) by Wayne E. Seguin 
+&lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; 
+[https://rvm.io/]</span></p><p><a></a><span id="1-420">$ bundle --version</span></p><p><a></a><span id="1-421">Bundler version 1.7.9</span></p><p><a></a><span id="1-422">$ gem --version</span></p><p><a></a><span id="1-423">2.4.5</span></p><div class="fold-start fold active" id="fold-start-install.bundler"><span class="fold-name">install.bundler</span><p><a></a><span title="This command finished after 127.60 seconds." class="duration" id="1-425">127.60s</span><span id="1-426">$ bundle install --without production</span></p><p><a></a><span id="1-427">Fetching gem metadata from https://rubygems.org/.........</span></p><p><a></a><span id="1-428">Fetching additional metadata from https://rubygems.org/..</span></p><p><a></a><span id="1-429">Fetching https://github.com/refile/refile.git</span></p><p><a></a><span id="1-430">Using rake 10.4.2</span></p><p><a></a><span class="green" id="1-431">Installing i18n 0.7.0</span><span id="1-432"></span></p><p><a></a><span class="green" id="1-433">Installing json 1.8.3</span><span id="1-434"></span></p><p><a></a><span class="green" id="1-435">Installing minitest 5.7.0</span><span id="1-436"></span></p><p><a></a><span class="green" id="1-437">Installing thread_safe 0.3.5</span><span id="1-438"></span></p><p><a></a><span class="green" id="1-439">Installing tzinfo 1.2.2</span><span id="1-440"></span></p><p><a></a><span class="green" id="1-441">Installing activesupport 4.2.3</span><span id="1-442"></span></p><p><a></a><span class="green" id="1-443">Installing builder 3.2.2</span><span id="1-444"></span></p><p><a></a><span class="green" id="1-445">Installing erubis 2.7.0</span><span id="1-446"></span></p><p><a></a><span class="green" id="1-447">Installing mini_portile 0.6.2</span><span id="1-448"></span></p><p><a></a><span class="green" id="1-449">Installing nokogiri 1.6.6.2</span><span id="1-450"></span></p><p><a></a><span class="green" id="1-451">Installing rails-deprecated_sanitizer 1.0.3</span><span id="1-452"></span></p><p><a></a><span class="green" id="1-453">Installing rails-dom-testing 1.0.6</span><span id="1-454"></span></p><p><a></a><span class="green" id="1-455">Installing loofah 2.0.2</span><span id="1-456"></span></p><p><a></a><span class="green" id="1-457">Installing rails-html-sanitizer 1.0.2</span><span id="1-458"></span></p><p><a></a><span class="green" id="1-459">Installing actionview 4.2.3</span><span id="1-460"></span></p><p><a></a><span class="green" id="1-461">Installing rack 1.6.4</span><span id="1-462"></span></p><p><a></a><span class="green" id="1-463">Installing rack-test 0.6.3</span><span id="1-464"></span></p><p><a></a><span class="green" id="1-465">Installing actionpack 4.2.3</span><span id="1-466"></span></p><p><a></a><span class="green" id="1-467">Installing globalid 0.3.6</span><span id="1-468"></span></p><p><a></a><span class="green" id="1-469">Installing activejob 4.2.3</span><span id="1-470"></span></p><p><a></a><span class="green" id="1-471">Installing mime-types 2.6.1</span><span id="1-472"></span></p><p><a></a><span class="green" id="1-473">Installing mail 2.6.3</span><span id="1-474"></span></p><p><a></a><span class="green" id="1-475">Installing actionmailer 4.2.3</span><span id="1-476"></span></p><p><a></a><span class="green" id="1-477">Installing activemodel 4.2.3</span><span id="1-478"></span></p><p><a></a><span class="green" id="1-479">Installing arel 6.0.3</span><span id="1-480"></span></p><p><a></a><span class="green" id="1-481">Installing activerecord 4.2.3</span><span id="1-482"></span></p><p><a></a><span class="green" id="1-483">Installing addressable 2.3.8</span><span id="1-484"></span></p><p><a></a><span class="green" id="1-485">Installing execjs 2.5.2</span><span id="1-486"></span></p><p><a></a><span class="green" id="1-487">Installing autoprefixer-rails 5.2.1.1</span><span id="1-488"></span></p><p><a></a><span class="green" id="1-489">Installing bcrypt 3.1.10</span><span id="1-490"></span></p><p><a></a><span class="green" id="1-491">Installing coderay 1.1.0</span><span id="1-492"></span></p><p><a></a><span class="green" id="1-493">Installing better_errors 2.1.1</span><span id="1-494"></span></p><p><a></a><span class="green" id="1-495">Installing debug_inspector 0.0.2</span><span id="1-496"></span></p><p><a></a><span class="green" id="1-497">Installing binding_of_caller 0.7.2</span><span id="1-498"></span></p><p><a></a><span class="green" id="1-499">Installing sass 3.4.16</span><span id="1-500"></span></p><p><a></a><span class="green" id="1-501">Installing bootstrap-sass 3.3.5.1</span><span id="1-502"></span></p><p><a></a><span class="green" id="1-503">Installing thor 0.19.1</span><span id="1-504"></span></p><p><a></a><span class="green" id="1-505">Installing railties 4.2.3</span><span id="1-506"></span></p><p><a></a><span class="green" id="1-507">Installing bootswatch-rails 3.3.5</span><span id="1-508"></span></p><p><a></a><span class="green" id="1-509">Installing columnize 0.9.0</span><span id="1-510"></span></p><p><a></a><span class="green" id="1-511">Installing byebug 5.0.0</span><span id="1-512"></span></p><p><a></a><span class="green" id="1-513">Installing xpath 2.0.0</span><span id="1-514"></span></p><p><a></a><span class="green" id="1-515">Installing capybara 2.4.4</span><span id="1-516"></span></p><p><a></a><span class="green" id="1-517">Installing coffee-script-source 1.9.1.1</span><span id="1-518"></span></p><p><a></a><span class="green" id="1-519">Installing coffee-script 2.4.1</span><span id="1-520"></span></p><p><a></a><span class="green" id="1-521">Installing coffee-rails 4.1.0</span><span id="1-522"></span></p><p><a></a><span class="green" id="1-523">Installing unf_ext 0.0.7.1</span><span id="1-524"></span></p><p><a></a><span class="green" id="1-525">Installing unf 0.1.4</span><span id="1-526"></span></p><p><a></a><span class="green" id="1-527">Installing domain_name 0.5.24</span><span id="1-528"></span></p><p><a></a><span class="green" id="1-529">Installing http-cookie 1.0.2</span><span id="1-530"></span></p><p><a></a><span class="green" id="1-531">Installing netrc 0.10.3</span><span id="1-532"></span></p><p><a></a><span class="green" id="1-533">Installing rest-client 1.8.0</span><span id="1-534"></span></p><p><a></a><span class="green" id="1-535">Installing docile 1.1.5</span><span id="1-536"></span></p><p><a></a><span class="green" id="1-537">Installing simplecov-html 0.10.0</span><span id="1-538"></span></p><p><a></a><span class="green" id="1-539">Installing simplecov 0.10.0</span><span id="1-540"></span></p><p><a></a><span class="green" id="1-541">Installing tins 1.5.4</span><span id="1-542"></span></p><p><a></a><span class="green" id="1-543">Installing term-ansicolor 1.3.2</span><span id="1-544"></span></p><p><a></a><span class="green" id="1-545">Installing coveralls 0.8.2</span><span id="1-546"></span></p><p><a></a><span class="green" id="1-547">Installing diff-lcs 1.2.5</span><span id="1-548"></span></p><p><a></a><span class="green" id="1-549">Installing multi_json 1.11.2</span><span id="1-550"></span></p><p><a></a><span class="green" id="1-551">Installing gherkin 2.12.2</span><span id="1-552"></span></p><p><a></a><span class="green" id="1-553">Installing multi_test 0.1.2</span><span id="1-554"></span></p><p><a></a><span class="green" id="1-555">Installing cucumber 1.3.20</span><span id="1-556"></span></p><p><a></a><span id="1-557">Using bundler 1.7.9</span></p><p><a></a><span class="green" id="1-558">Installing sprockets 3.2.0</span><span id="1-559"></span></p><p><a></a><span class="green" id="1-560">Installing sprockets-rails 2.3.2</span><span id="1-561"></span></p><p><a></a><span class="green" id="1-562">Installing rails 4.2.3</span><span id="1-563"></span></p><p><a></a><span class="green" id="1-564">Installing cucumber-rails 1.4.2</span><span id="1-565"></span></p><p><a></a><span class="green" id="1-566">Installing database_cleaner 1.4.1</span><span id="1-567"></span></p><p><a></a><span class="green" id="1-568">Installing orm_adapter 0.5.0</span><span id="1-569"></span></p><p><a></a><span class="green" id="1-570">Installing responders 2.1.0</span><span id="1-571"></span></p><p><a></a><span class="green" id="1-572">Installing warden 1.2.3</span><span id="1-573"></span></p><p><a></a><span class="green" id="1-574">Installing devise 3.5.1</span><span id="1-575"></span></p><p><a></a><span class="green" id="1-576">Installing gretel 3.0.8</span><span id="1-577"></span></p><p><a></a><span class="green" id="1-578">Installing jbuilder 2.3.1</span><span id="1-579"></span></p><p><a></a><span class="green" id="1-580">Installing jquery-rails 4.0.4</span><span id="1-581"></span></p><p><a></a><span class="green" id="1-582">Installing launchy 2.4.3</span><span id="1-583"></span></p><p><a></a><span class="green" id="1-584">Installing mini_magick 4.2.9</span><span id="1-585"></span></p><p><a></a><span class="green" id="1-586">Installing quiet_assets 1.1.0</span><span id="1-587"></span></p><p><a></a><span class="green" id="1-588">Installing rack-protection 1.5.3</span><span id="1-589"></span></p><p><a></a><span id="1-590">Using rdoc 4.2.0</span></p><p><a></a><span class="green" id="1-591">Installing tilt 1.4.1</span><span id="1-592"></span></p><p><a></a><span class="green" id="1-593">Installing sinatra 1.4.6</span><span id="1-594"></span></p><p><a></a><span id="1-595">Using refile 0.5.5 from https://github.com/refile/refile.git (at master)</span></p><p><a></a><span class="green" id="1-596">Installing sass-rails 5.0.3</span><span id="1-597"></span></p><p><a></a><span class="green" id="1-598">Installing sdoc 0.4.1</span><span id="1-599"></span></p><p><a></a><span class="green" id="1-600">Installing spring 1.3.6</span><span id="1-601"></span></p><p><a></a><span class="green" id="1-602">Installing sqlite3 1.3.10</span><span id="1-603"></span></p><p><a></a><span class="green" id="1-604">Installing turbolinks 2.5.3</span><span id="1-605"></span></p><p><a></a><span class="green" id="1-606">Installing uglifier 2.7.1</span><span id="1-607"></span></p><p><a></a><span class="green" id="1-608">Installing web-console 2.2.1</span><span id="1-609"></span></p><p><a></a><span class="green" id="1-610">Your bundle is complete!</span><span id="1-611"></span></p><p><a></a><span class="green" id="1-612">Gems in the group production were not installed.</span><span id="1-613"></span></p><p><a></a><span class="green" id="1-614">Use `bundle show [gemname]` to see where a bundled gem is installed.</span><span id="1-615"></span></p><p><a></a><span id="1-616"></span><span id="1-617"></span></p></div><div class="fold-end" id="fold-end-install.bundler"></div><p><a></a><span title="This command finished after 0.00 seconds." class="duration" id="1-619">0.00s</span><span id="1-620">$ RAILS_ENV=test</span></p><p><a></a><span id="1-621"></span><span id="1-622"></span></p><p><a></a><span id="1-623"></span></p><p><a></a><span class="green bold" id="1-624">The command "RAILS_ENV=test" exited with 0.</span><span id="1-625"></span></p><p><a></a><span title="This command finished after 2.45 seconds." class="duration" id="1-626">2.45s</span><span id="1-627">$ bundle exec rake db:migrate --trace</span></p><p><a></a><span id="1-628">** Invoke db:migrate (first_time)</span></p><p><a></a><span id="1-629">** Invoke environment (first_time)</span></p><p><a></a><span id="1-630">** Execute environment</span></p><p><a></a><span id="1-631">** Invoke db:load_config (first_time)</span></p><p><a></a><span id="1-632">** Execute db:load_config</span></p><p><a></a><span id="1-633">** Execute db:migrate</span></p><p><a></a><span id="1-634">== 20150625145205 DeviseCreateUsers: migrating ================================</span></p><p><a></a><span id="1-635">-- create_table(:users)</span></p><p><a></a><span id="1-636">   -&gt; 0.0030s</span></p><p><a></a><span id="1-637">-- add_index(:users, :email, {:unique=&gt;true})</span></p><p><a></a><span id="1-638">   -&gt; 0.0005s</span></p><p><a></a><span id="1-639">-- add_index(:users, :reset_password_token, {:unique=&gt;true})</span></p><p><a></a><span id="1-640">   -&gt; 0.0007s</span></p><p><a></a><span id="1-641">-- add_index(:users, :unlock_token, {:unique=&gt;true})</span></p><p><a></a><span id="1-642">   -&gt; 0.0009s</span></p><p><a></a><span id="1-643">== 20150625145205 DeviseCreateUsers: migrated (0.0054s) =======================</span></p><p><a></a><span id="1-644"></span></p><p><a></a><span id="1-645">== 20150625192619 AddNombreYTipoToUsers: migrating ============================</span></p><p><a></a><span id="1-646">-- add_column(:users, :nombre, :string)</span></p><p><a></a><span id="1-647">   -&gt; 0.0004s</span></p><p><a></a><span id="1-648">-- add_column(:users, :tipo, :integer, {:default=&gt;2, :null=&gt;false})</span></p><p><a></a><span id="1-649">   -&gt; 0.0003s</span></p><p><a></a><span id="1-650">-- add_column(:users, :habilitado, :boolean, {:default=&gt;true})</span></p><p><a></a><span id="1-651">   -&gt; 0.0004s</span></p><p><a></a><span id="1-652">== 20150625192619 AddNombreYTipoToUsers: migrated (0.0014s) ===================</span></p><p><a></a><span id="1-653"></span></p><p><a></a><span id="1-654">== 20150629230314 CreateProjects: migrating ===================================</span></p><p><a></a><span id="1-655">-- create_table(:projects)</span></p><p><a></a><span id="1-656">   -&gt; 0.0011s</span></p><p><a></a><span id="1-657">== 20150629230314 CreateProjects: migrated (0.0012s) ==========================</span></p><p><a></a><span id="1-658"></span></p><p><a></a><span id="1-659">== 20150707204844 CreateNotifications: migrating ==============================</span></p><p><a></a><span id="1-660">-- create_table(:notifications)</span></p><p><a></a><span id="1-661">   -&gt; 0.0010s</span></p><p><a></a><span id="1-662">== 20150707204844 CreateNotifications: migrated (0.0011s) =====================</span></p><p><a></a><span id="1-663"></span></p><p><a></a><span id="1-664">== 20150707204846 CreateAttachments: migrating ================================</span></p><p><a></a><span id="1-665">-- create_table(:attachments)</span></p><p><a></a><span id="1-666">   -&gt; 0.0011s</span></p><p><a></a><span id="1-667">== 20150707204846 CreateAttachments: migrated (0.0011s) =======================</span></p><p><a></a><span id="1-668"></span></p><p><a></a><span id="1-669">== 20150721204846 AddReadMarkToNotifications: migrating =======================</span></p><p><a></a><span id="1-670">-- add_column(:notifications, :read_mark, :boolean, {:default=&gt;false})</span></p><p><a></a><span id="1-671">   -&gt; 0.0004s</span></p><p><a></a><span id="1-672">== 20150721204846 AddReadMarkToNotifications: migrated (0.0005s) ==============</span></p><p><a></a><span id="1-673"></span></p><p><a></a><span id="1-674">** Invoke db:_dump (first_time)</span></p><p><a></a><span id="1-675">** Execute db:_dump</span></p><p><a></a><span id="1-676">** Invoke db:schema:dump (first_time)</span></p><p><a></a><span id="1-677">** Invoke environment </span></p><p><a></a><span id="1-678">** Invoke db:load_config </span></p><p><a></a><span id="1-679">** Execute db:schema:dump</span></p><p><a></a><span id="1-680"></span><span id="1-681"></span></p><p><a></a><span id="1-682"></span></p><p><a></a><span class="green bold" id="1-683">The command "bundle exec rake db:migrate --trace" exited with 0.</span><span id="1-684"></span></p><p><a></a><span title="This command finished after 2.33 seconds." class="duration" id="1-685">2.33s</span><span id="1-686">$ bundle exec rake db:test:prepare</span></p><p><a></a><span id="1-687"></span><span id="1-688"></span></p><p><a></a><span id="1-689"></span></p><p><a></a><span class="green bold" id="1-690">The command "bundle exec rake db:test:prepare" exited with 0.</span><span id="1-691"></span></p><p><a></a><span title="This command finished after 21.61 seconds." class="duration" id="1-692">21.61s</span><span id="1-693">$ bundle exec rake cucumber</span></p><p><a></a><span id="1-694">/home/travis/.rvm/rubies/ruby-2.2.0/bin/ruby -S bundle exec cucumber  --profile default</span></p><p><a></a><span class="green" id="1-695">[Coveralls] Set up the SimpleCov formatter.</span><span id="1-696"></span></p><p><a></a><span class="green" id="1-697">[Coveralls] Using SimpleCov's 'rails' settings.</span><span id="1-698"></span></p><p><a></a><span id="1-699">Using the default profile...</span></p><p><a></a><span id="1-700"># language: es</span></p><p><a></a><span id="1-701">Característica: Indentificacion clientes</span></p><p><a></a><span id="1-702">    Como un cliente del estudio</span></p><p><a></a><span id="1-703">    Para poder ver las novedades de mis Proyectos</span></p><p><a></a><span id="1-704">    Deseo identificarme en la aplicación de clientes del estudio</span></p><p><a></a><span id="1-705"></span></p><p><a></a><span id="1-706">  Antecedentes: </span><span class="grey" id="1-707">                           # features/identificacion_clientes.feature:7</span><span id="1-708"></span></p><p><a></a><span id="1-709">    </span><span class="green" id="1-710">Dado que soy cliente registrado</span><span class="grey" id="1-711">        # features/step_definitions/identificacion_steps.rb:2</span><span id="1-712"></span></p><p><a></a><span id="1-713">    </span><span class="green" id="1-714">Y me identifico como "</span><span class="green bold" id="1-715">don@deroche.com</span><span class="green" id="1-716">"</span><span class="grey" id="1-717"> # features/step_definitions/identificacion_steps.rb:12</span><span id="1-718"></span></p><p><a></a><span id="1-719"></span></p><p><a></a><span id="1-720">  Escenario: cliente todo bien.</span><span class="grey" id="1-721">                             # features/identificacion_clientes.feature:11</span><span id="1-722"></span></p><p><a></a><span id="1-723">    </span><span class="green" id="1-724">Y que el usuario esta "</span><span class="green bold" id="1-725">habilitado</span><span class="green" id="1-726">"</span><span class="grey" id="1-727">                      # features/step_definitions/identificacion_steps.rb:17</span><span id="1-728"></span></p><p><a></a><span id="1-729">    </span><span class="green" id="1-730">Entonces veo un mensaje "</span><span class="green bold" id="1-731">Bienvenido DeRoche - Cliente.</span><span class="green" id="1-732">"</span><span class="grey" id="1-733"> # features/step_definitions/common_steps.rb:3</span><span id="1-734"></span></p><p><a></a><span id="1-735"></span></p><p><a></a><span id="1-736">  Escenario: cliente usuario deshabilitado.</span><span class="grey" id="1-737">
+                                                                        
+                      # features/identificacion_clientes.feature:15</span><span id="1-738"></span></p><p><a></a><span id="1-739">    </span><span class="green" id="1-740">Y que el usuario esta "</span><span class="green bold" id="1-741">deshabilitado</span><span class="green" id="1-742">"</span><span class="grey" id="1-743">
+                                                                        
+                        # 
+features/step_definitions/identificacion_steps.rb:17</span><span id="1-744"></span></p><p><a></a><span id="1-745">    </span><span class="green" id="1-746">Entonces veo un mensaje que dice "</span><span class="green bold" id="1-747">Su usuario ha sido deshabilitado, por favor comuniquese con el admistrador (contacto@terciar.ga).</span><span class="green" id="1-748">"</span><span class="grey" id="1-749"> # features/step_definitions/identificacion_steps.rb:28</span><span id="1-750"></span></p><p><a></a><span id="1-751"></span></p><p><a></a><span id="1-752"># language: es</span></p><p><a></a><span id="1-753">Característica: Listado de Novedades</span></p><p><a></a><span id="1-754">    Como un cliente</span></p><p><a></a><span id="1-755">    Para poder ver novedades que tienen un proyecto</span></p><p><a></a><span id="1-756">    Deseo ver un listado de las novedades de uno de mis proyectos</span></p><p><a></a><span id="1-757"></span></p><p><a></a><span id="1-758">  Antecedentes: </span><span class="grey" id="1-759">                                # features/listado_novedades.feature:7</span><span id="1-760"></span></p><p><a></a><span id="1-761">    </span><span class="green" id="1-762">Dado que estoy logueado como "</span><span class="green bold" id="1-763">cliente</span><span class="green" id="1-764">"</span><span class="grey" id="1-765">      # features/step_definitions/identificacion_steps.rb:5</span><span id="1-766"></span></p><p><a></a><span id="1-767">    </span><span class="green" id="1-768">Dado que tengo </span><span class="green bold" id="1-769">1</span><span class="green" id="1-770"> proyecto</span><span class="grey" id="1-771">                   # features/step_definitions/listado_proyectos_steps.rb:2</span><span id="1-772"></span></p><p><a></a><span id="1-773">      | </span><span class="green" id="1-774">name     </span><span id="1-775"> |</span><span id="1-776"> </span><span class="green" id="1-777">user_id</span><span id="1-778"> |</span><span id="1-779"></span></p><p><a></a><span id="1-780">      | </span><span class="green" id="1-781">Project 1</span><span id="1-782"> |</span><span id="1-783"> </span><span class="green" id="1-784">1      </span><span id="1-785"> |</span><span id="1-786"></span></p><p><a></a><span id="1-787">    </span><span class="green" id="1-788">Y estoy en la pantalla "</span><span class="green bold" id="1-789">Mis proyectos</span><span class="green" id="1-790">"</span><span class="grey" id="1-791">      # features/step_definitions/common_steps.rb:8</span><span id="1-792"></span></p><p><a></a><span id="1-793">    </span><span class="green" id="1-794">Y que este proyecto tiene </span><span class="green bold" id="1-795">3</span><span class="green" id="1-796"> novedades</span><span class="grey" id="1-797">       # features/step_definitions/listado_novedades_steps.rb:2</span><span id="1-798"></span></p><p><a></a><span id="1-799">      | </span><span class="green" id="1-800">title            </span><span id="1-801"> |</span><span id="1-802"> </span><span class="green" id="1-803">message                                                       </span><span id="1-804"> |</span><span id="1-805"> </span><span class="green" id="1-806">project_id</span><span id="1-807"> |</span><span id="1-808"> </span><span class="green" id="1-809">date      </span><span id="1-810"> |</span><span id="1-811"></span></p><p><a></a><span id="1-812">      | </span><span class="green" id="1-813">Mockups          </span><span id="1-814"> |</span><span id="1-815"> </span><span class="green" id="1-816">Revise las imagenes si son lo que acordamos en la reunion     </span><span id="1-817"> |</span><span id="1-818"> </span><span class="green" id="1-819">1         </span><span id="1-820"> |</span><span id="1-821"> </span><span class="green" id="1-822">2015-03-01</span><span id="1-823"> |</span><span id="1-824"></span></p><p><a></a><span id="1-825">      | </span><span class="green" id="1-826">Intefaces en alta</span><span id="1-827"> |</span><span id="1-828"> </span><span class="green" id="1-829">Ya puede consultar las interfaces como van quedando en la demo</span><span id="1-830"> |</span><span id="1-831"> </span><span class="green" id="1-832">1         </span><span id="1-833"> |</span><span id="1-834"> </span><span class="green" id="1-835">2014-12-01</span><span id="1-836"> |</span><span id="1-837"></span></p><p><a></a><span id="1-838">      | </span><span class="green" id="1-839">Demo disponible  </span><span id="1-840"> |</span><span id="1-841"> </span><span class="green" id="1-842">Le recordamos la demo esta disponible en demo.app.com         </span><span id="1-843"> |</span><span id="1-844"> </span><span class="green" id="1-845">1         </span><span id="1-846"> |</span><span id="1-847"> </span><span class="green" id="1-848">2015-07-01</span><span id="1-849"> |</span><span id="1-850"></span></p><p><a></a><span id="1-851">    </span><span class="green" id="1-852">Y seleccionó "</span><span class="green bold" id="1-853">Ver novedades</span><span class="green" id="1-854">"</span><span class="grey" id="1-855">                # features/step_definitions/common_steps.rb:27</span><span id="1-856"></span></p><p><a></a><span id="1-857">    </span><span class="green" id="1-858">Entonces veo un listado con las </span><span class="green bold" id="1-859">3</span><span class="green" id="1-860"> novedades</span><span class="grey" id="1-861"> # features/step_definitions/listado_novedades_steps.rb:31</span><span id="1-862"></span></p><p><a></a><span id="1-863"></span></p><p><a></a><span id="1-864">  Escenario: Veo listado de novedades.</span><span class="grey" id="1-865">          # features/listado_novedades.feature:21</span><span id="1-866"></span></p><p><a></a><span id="1-867">    </span><span class="green" id="1-868">Dado que el proyecto tiene </span><span class="green bold" id="1-869">3</span><span class="green" id="1-870"> novedades</span><span class="grey" id="1-871">      # features/step_definitions/listado_novedades_steps.rb:2</span><span id="1-872"></span></p><p><a></a><span id="1-873">      | </span><span class="green" id="1-874">title            </span><span id="1-875"> |</span><span id="1-876"> </span><span class="green" id="1-877">message                                                       </span><span id="1-878"> |</span><span id="1-879"> </span><span class="green" id="1-880">project_id</span><span id="1-881"> |</span><span id="1-882"> </span><span class="green" id="1-883">date      </span><span id="1-884"> |</span><span id="1-885"></span></p><p><a></a><span id="1-886">      | </span><span class="green" id="1-887">Mockups          </span><span id="1-888"> |</span><span id="1-889"> </span><span class="green" id="1-890">Revise las imagenes si son lo que acordamos en la reunion     </span><span id="1-891"> |</span><span id="1-892"> </span><span class="green" id="1-893">1         </span><span id="1-894"> |</span><span id="1-895"> </span><span class="green" id="1-896">2015-03-01</span><span id="1-897"> |</span><span id="1-898"></span></p><p><a></a><span id="1-899">      | </span><span class="green" id="1-900">Intefaces en alta</span><span id="1-901"> |</span><span id="1-902"> </span><span class="green" id="1-903">Ya puede consultar las interfaces como van quedando en la demo</span><span id="1-904"> |</span><span id="1-905"> </span><span class="green" id="1-906">1         </span><span id="1-907"> |</span><span id="1-908"> </span><span class="green" id="1-909">2014-12-01</span><span id="1-910"> |</span><span id="1-911"></span></p><p><a></a><span id="1-912">      | </span><span class="green" id="1-913">Demo disponible  </span><span id="1-914"> |</span><span id="1-915"> </span><span class="green" id="1-916">Le recordamos la demo esta disponible en demo.app.com         </span><span id="1-917"> |</span><span id="1-918"> </span><span class="green" id="1-919">1         </span><span id="1-920"> |</span><span id="1-921"> </span><span class="green" id="1-922">2015-07-01</span><span id="1-923"> |</span><span id="1-924"></span></p><p><a></a><span id="1-925">    </span><span class="green" id="1-926">Entonces veo un listado con las </span><span class="green bold" id="1-927">3</span><span class="green" id="1-928"> novedades</span><span class="grey" id="1-929"> # features/step_definitions/listado_novedades_steps.rb:31</span><span id="1-930"></span></p><p><a></a><span id="1-931"></span></p><p><a></a><span id="1-932">  Escenario: Las novedades estan ordenadas de la más reciente a la más antigua</span><span class="grey" id="1-933"> # features/listado_novedades.feature:29</span><span id="1-934"></span></p><p><a></a><span id="1-935">    </span><span class="green" id="1-936">Entonces debo ver "</span><span class="green bold" id="1-937">Demo disponible</span><span class="green" id="1-938">" antes que "</span><span class="green bold" id="1-939">Mockups</span><span class="green" id="1-940">"</span><span class="grey" id="1-941">                    # features/step_definitions/listado_novedades_steps.rb:42</span><span id="1-942"></span></p><p><a></a><span id="1-943"></span></p><p><a></a><span id="1-944">  Escenario: proyecto sin novedades</span><span class="grey" id="1-945">             # features/listado_novedades.feature:32</span><span id="1-946"></span></p><p><a></a><span id="1-947">    </span><span class="green" id="1-948">Dado que el proyecto no tiene novedades</span><span class="grey" id="1-949">     # features/step_definitions/listado_novedades_steps.rb:50</span><span id="1-950"></span></p><p><a></a><span id="1-951">      | </span><span class="green" id="1-952">title</span><span id="1-953"> |</span><span id="1-954"> </span><span class="green" id="1-955">message</span><span id="1-956"> |</span><span id="1-957"> </span><span class="green" id="1-958">adjunto</span><span id="1-959"> |</span><span id="1-960"> </span><span class="green" id="1-961">proyecto_id</span><span id="1-962"> |</span><span id="1-963"> </span><span class="green" id="1-964">fecha</span><span id="1-965"> |</span><span id="1-966"></span></p><p><a></a><span id="1-967">    </span><span class="green" id="1-968">Entonces veo el listado de novedades vacio</span><span class="grey" id="1-969">  # features/step_definitions/listado_novedades_steps.rb:56</span><span id="1-970"></span></p><p><a></a><span id="1-971"></span></p><p><a></a><span id="1-972"># language: es</span></p><p><a></a><span id="1-973">Característica: Listado de Projectos</span></p><p><a></a><span id="1-974">    Como un cliente del estudio</span></p><p><a></a><span id="1-975">    Para poder ver que proyectos tienen novedades y consultarlas luego</span></p><p><a></a><span id="1-976">    Deseo ver un listado de mis proyectos</span></p><p><a></a><span id="1-977"></span></p><p><a></a><span id="1-978">  Antecedentes: </span><span class="grey" id="1-979">                                     # features/listado_proyectos.feature:7</span><span id="1-980"></span></p><p><a></a><span id="1-981">    </span><span class="green" id="1-982">Dado que estoy identificado como "</span><span class="green bold" id="1-983">cliente</span><span class="green" id="1-984">"</span><span class="grey" id="1-985">       # features/step_definitions/identificacion_steps.rb:5</span><span id="1-986"></span></p><p><a></a><span id="1-987">    </span><span class="green" id="1-988">Y estoy en la pantalla donde veo "</span><span class="green bold" id="1-989">Mis proyectos</span><span class="green" id="1-990">"</span><span class="grey" id="1-991"> # features/step_definitions/common_steps.rb:8</span><span id="1-992"></span></p><p><a></a><span id="1-993"></span></p><p><a></a><span id="1-994">  #Camino feliz.</span></p><p><a></a><span id="1-995">  Escenario: tiene 2 proyectos.</span><span class="grey" id="1-996">                      # features/listado_proyectos.feature:12</span><span id="1-997"></span></p><p><a></a><span id="1-998">    </span><span class="green" id="1-999">Dado que tengo </span><span class="green bold" id="1-1000">2</span><span class="green" id="1-1001"> proyectos</span><span class="grey" id="1-1002">                       # features/step_definitions/listado_proyectos_steps.rb:2</span><span id="1-1003"></span></p><p><a></a><span id="1-1004">      | </span><span class="green" id="1-1005">name                          </span><span id="1-1006"> |</span><span id="1-1007"> </span><span class="green" id="1-1008">user_id</span><span id="1-1009"> |</span><span id="1-1010"></span></p><p><a></a><span id="1-1011">      | </span><span class="green" id="1-1012">Project Web Site Institutional</span><span id="1-1013"> |</span><span id="1-1014"> </span><span class="green" id="1-1015">1      </span><span id="1-1016"> |</span><span id="1-1017"></span></p><p><a></a><span id="1-1018">      | </span><span class="green" id="1-1019">Proyecto Expasión social media</span><span id="1-1020"> |</span><span id="1-1021"> </span><span class="green" id="1-1022">1      </span><span id="1-1023"> |</span><span id="1-1024"></span></p><p><a></a><span id="1-1025">    </span><span class="green" id="1-1026">Y estoy en la pantalla "</span><span class="green bold" id="1-1027">Mis proyectos</span><span class="green" id="1-1028">"</span><span class="grey" id="1-1029">           # features/step_definitions/common_steps.rb:8</span><span id="1-1030"></span></p><p><a></a><span id="1-1031">    </span><span class="green" id="1-1032">Entonces veo un listado con </span><span class="green bold" id="1-1033">2</span><span class="green" id="1-1034"> proyectos</span><span class="grey" id="1-1035">          # features/step_definitions/listado_proyectos_steps.rb:8</span><span id="1-1036"></span></p><p><a></a><span id="1-1037"></span></p><p><a></a><span id="1-1038">  Escenario: cliente tiene 1 proyecto con 2 novedades.</span><span class="grey" id="1-1039">                                    # features/listado_proyectos.feature:20</span><span id="1-1040"></span></p><p><a></a><span id="1-1041">    </span><span class="green" id="1-1042">Dado que tengo </span><span class="green bold" id="1-1043">1</span><span class="green" id="1-1044"> proyecto</span><span class="grey" id="1-1045">                                                             # features/step_definitions/listado_proyectos_steps.rb:2</span><span id="1-1046"></span></p><p><a></a><span id="1-1047">      | </span><span class="green" id="1-1048">name                          </span><span id="1-1049"> |</span><span id="1-1050"> </span><span class="green" id="1-1051">user_id</span><span id="1-1052"> |</span><span id="1-1053"></span></p><p><a></a><span id="1-1054">      | </span><span class="green" id="1-1055">Project Web Site Institutional</span><span id="1-1056"> |</span><span id="1-1057"> </span><span class="green" id="1-1058">1      </span><span id="1-1059"> |</span><span id="1-1060"></span></p><p><a></a><span id="1-1061">    </span><span class="green" id="1-1062">Y estoy en la pantalla "</span><span class="green bold" id="1-1063">Mis proyectos</span><span class="green" id="1-1064">"</span><span class="grey" id="1-1065">                                                # features/step_definitions/common_steps.rb:8</span><span id="1-1066"></span></p><p><a></a><span id="1-1067">    </span><span class="green" id="1-1068">Y que este proyecto tiene </span><span class="green bold" id="1-1069">2</span><span class="green" id="1-1070"> novedades</span><span class="grey" id="1-1071">                                                 # features/step_definitions/listado_novedades_steps.rb:2</span><span id="1-1072"></span></p><p><a></a><span id="1-1073">      | </span><span class="green" id="1-1074">title            </span><span id="1-1075"> |</span><span id="1-1076"> </span><span class="green" id="1-1077">message                                         </span><span id="1-1078"> |</span><span id="1-1079"> </span><span class="green" id="1-1080">project_id</span><span id="1-1081"> |</span><span id="1-1082"> </span><span class="green" id="1-1083">date      </span><span id="1-1084"> |</span><span id="1-1085"></span></p><p><a></a><span id="1-1086">      | </span><span class="green" id="1-1087">Mock Ups         </span><span id="1-1088"> |</span><span id="1-1089"> </span><span class="green" id="1-1090">Necesitamos validar estas interfaces            </span><span id="1-1091"> |</span><span id="1-1092"> </span><span class="green" id="1-1093">1         </span><span id="1-1094"> |</span><span id="1-1095"> </span><span class="green" id="1-1096">03/06/2015</span><span id="1-1097"> |</span><span id="1-1098"></span></p><p><a></a><span id="1-1099">      | </span><span class="green" id="1-1100">Versión de prueba</span><span id="1-1101"> |</span><span id="1-1102"> </span><span class="green" id="1-1103">Puede consultar la demo del sitio demo.sitio.com</span><span id="1-1104"> |</span><span id="1-1105"> </span><span class="green" id="1-1106">1         </span><span id="1-1107"> |</span><span id="1-1108"> </span><span class="green" id="1-1109">05/06/2015</span><span id="1-1110"> |</span><span id="1-1111"></span></p><p><a></a><span id="1-1112">    </span><span class="green" id="1-1113">Entonces veo una etiqueta de colores que identifica que el proyecto tiene </span><span class="green bold" id="1-1114">2</span><span class="green" id="1-1115"> novedades</span><span class="grey" id="1-1116"> # features/step_definitions/listado_novedades_steps.rb:8</span><span id="1-1117"></span></p><p><a></a><span id="1-1118"></span></p><p><a></a><span id="1-1119">  Escenario: ver novedades</span><span class="grey" id="1-1120">                           # features/listado_proyectos.feature:31</span><span id="1-1121"></span></p><p><a></a><span id="1-1122">    </span><span class="green" id="1-1123">Dado que tengo </span><span class="green bold" id="1-1124">1</span><span class="green" id="1-1125"> proyecto</span><span class="grey" id="1-1126">                        # features/step_definitions/listado_proyectos_steps.rb:2</span><span id="1-1127"></span></p><p><a></a><span id="1-1128">      | </span><span class="green" id="1-1129">name             </span><span id="1-1130"> |</span><span id="1-1131"> </span><span class="green" id="1-1132">user_id</span><span id="1-1133"> |</span><span id="1-1134"></span></p><p><a></a><span id="1-1135">      | </span><span class="green" id="1-1136">Versión de prueba</span><span id="1-1137"> |</span><span id="1-1138"> </span><span class="green" id="1-1139">1      </span><span id="1-1140"> |</span><span id="1-1141"></span></p><p><a></a><span id="1-1142">    </span><span class="green" id="1-1143">Y estoy en la pantalla "</span><span class="green bold" id="1-1144">Mis proyectos</span><span class="green" id="1-1145">"</span><span class="grey" id="1-1146">           # features/step_definitions/common_steps.rb:8</span><span id="1-1147"></span></p><p><a></a><span id="1-1148">    </span><span class="green" id="1-1149">Y que este proyecto tiene </span><span class="green bold" id="1-1150">1</span><span class="green" id="1-1151"> novedad</span><span class="grey" id="1-1152">              # features/step_definitions/listado_novedades_steps.rb:2</span><span id="1-1153"></span></p><p><a></a><span id="1-1154">      | </span><span class="green" id="1-1155">title            </span><span id="1-1156"> |</span><span id="1-1157"> </span><span class="green" id="1-1158">message                                         </span><span id="1-1159"> |</span><span id="1-1160"> </span><span class="green" id="1-1161">project_id</span><span id="1-1162"> |</span><span id="1-1163"> </span><span class="green" id="1-1164">date      </span><span id="1-1165"> |</span><span id="1-1166"></span></p><p><a></a><span id="1-1167">      | </span><span class="green" id="1-1168">Versión de prueba</span><span id="1-1169"> |</span><span id="1-1170"> </span><span class="green" id="1-1171">Puede consultar la demo del sitio demo.sitio.com</span><span id="1-1172"> |</span><span id="1-1173"> </span><span class="green" id="1-1174">1         </span><span id="1-1175"> |</span><span id="1-1176"> </span><span class="green" id="1-1177">03/06/2015</span><span id="1-1178"> |</span><span id="1-1179"></span></p><p><a></a><span id="1-1180">    </span><span class="green" id="1-1181">Y seleccionó "</span><span class="green bold" id="1-1182">Ver novedades</span><span class="green" id="1-1183">"</span><span class="grey" id="1-1184">                     # features/step_definitions/common_steps.rb:27</span><span id="1-1185"></span></p><p><a></a><span id="1-1186">    </span><span class="green" id="1-1187">Entonces veo un listado con las </span><span class="green bold" id="1-1188">1</span><span class="green" id="1-1189"> novedades</span><span class="grey" id="1-1190">      # features/step_definitions/listado_novedades_steps.rb:31</span><span id="1-1191"></span></p><p><a></a><span id="1-1192"></span></p><p><a></a><span id="1-1193">  Escenario: cliente no tiene proyectos.</span><span class="grey" id="1-1194">             # features/listado_proyectos.feature:42</span><span id="1-1195"></span></p><p><a></a><span id="1-1196">    </span><span class="green" id="1-1197">Dado que no tengo proyectos</span><span class="grey" id="1-1198">                      # features/step_definitions/listado_proyectos_steps.rb:13</span><span id="1-1199"></span></p><p><a></a><span id="1-1200">      | </span><span class="green" id="1-1201">name</span><span id="1-1202"> |</span><span id="1-1203"> </span><span class="green" id="1-1204">user_id</span><span id="1-1205"> |</span><span id="1-1206"></span></p><p><a></a><span id="1-1207">      | </span><span class="green" id="1-1208">    </span><span id="1-1209"> |</span><span id="1-1210"> </span><span class="green" id="1-1211">1      </span><span id="1-1212"> |</span><span id="1-1213"></span></p><p><a></a><span id="1-1214">    </span><span class="green" id="1-1215">Entonces veo un listado vacios.</span><span class="grey" id="1-1216">                  # features/step_definitions/listado_proyectos_steps.rb:18</span><span id="1-1217"></span></p><p><a></a><span id="1-1218"></span></p><p><a></a><span id="1-1219"># language: es</span></p><p><a></a><span id="1-1220">Característica: Ver novedad</span></p><p><a></a><span id="1-1221">    Como un cliente del estudio, que tiene al menos 1 proyecto registrado con al menos 1 novedad</span></p><p><a></a><span id="1-1222">    Para poder informarme sobre una novedad en particular</span></p><p><a></a><span id="1-1223">    Deseo ver en detalle el contenido de la novedad seleccionada de uno de mis proyectos</span></p><p><a></a><span id="1-1224"></span></p><p><a></a><span id="1-1225">  Antecedentes: </span><span class="grey" id="1-1226">                                           # features/ver_novedad.feature:7</span><span id="1-1227"></span></p><p><a></a><span id="1-1228">    </span><span class="green" id="1-1229">Dado que estoy identificado como "</span><span class="green bold" id="1-1230">cliente</span><span class="green" id="1-1231">"</span><span class="grey" id="1-1232">             # features/step_definitions/identificacion_steps.rb:5</span><span id="1-1233"></span></p><p><a></a><span id="1-1234">    </span><span class="green" id="1-1235">Y que he seleccionado el proyecto "</span><span class="green bold" id="1-1236">Project 1</span><span class="green" id="1-1237">"</span><span class="grey" id="1-1238">          # features/step_definitions/ver_novedad_steps.rb:2</span><span id="1-1239"></span></p><p><a></a><span id="1-1240">    </span><span class="green" id="1-1241">Y que he seleccionado la novedad "</span><span class="green bold" id="1-1242">Mockups disponibles</span><span class="green" id="1-1243">"</span><span class="grey" id="1-1244"> # features/step_definitions/ver_novedad_steps.rb:13</span><span id="1-1245"></span></p><p><a></a><span id="1-1246"></span></p><p><a></a><span id="1-1247">  Escenario: veo el detalle de una novedad</span><span class="grey" id="1-1248">                                  # features/ver_novedad.feature:12</span><span id="1-1249"></span></p><p><a></a><span id="1-1250">    </span><span class="green" id="1-1251">Entonces veo el titulo "</span><span class="green bold" id="1-1252">Mockups disponibles</span><span class="green" id="1-1253">"</span><span class="grey" id="1-1254">                            # features/step_definitions/ver_novedad_steps.rb:17</span><span id="1-1255"></span></p><p><a></a><span id="1-1256">    </span><span class="green" id="1-1257">Y el mensaje "</span><span class="green bold" id="1-1258">Puede ver y validar los bosquejos de la interfaz grafica</span><span class="green" id="1-1259">"</span><span class="grey" id="1-1260"> # features/step_definitions/ver_novedad_steps.rb:21</span><span id="1-1261"></span></p><p><a></a><span id="1-1262">    </span><span class="green" id="1-1263">Y la fecha "</span><span class="green bold" id="1-1264">01/09/2014</span><span class="green" id="1-1265">"</span><span class="grey" id="1-1266">                                                 # features/step_definitions/ver_novedad_steps.rb:25</span><span id="1-1267"></span></p><p><a></a><span id="1-1268"></span></p><p><a></a><span id="1-1269">  Escenario: veo detalle de novedad con imagenes</span><span class="grey" id="1-1270">                            # features/ver_novedad.feature:17</span><span id="1-1271"></span></p><p><a></a><span id="1-1272">    </span><span class="yellow" id="1-1273">Dado que la novedad tiene </span><span class="yellow bold" id="1-1274">1</span><span class="yellow" id="1-1275"> adjunto</span><span class="grey" id="1-1276">                                     # features/step_definitions/identificacion_steps.rb:54</span><span id="1-1277"></span></p><p><a></a><span id="1-1278">      | </span><span class="yellow" id="1-1279">adjunto     </span><span id="1-1280"> |</span><span id="1-1281"> </span><span class="yellow" id="1-1282">news_id</span><span id="1-1283"> |</span><span id="1-1284"> </span><span class="yellow" id="1-1285">project_id</span><span id="1-1286"> |</span><span id="1-1287"></span></p><p><a></a><span id="1-1288">      | </span><span class="yellow" id="1-1289">mockups.jpeg</span><span id="1-1290"> |</span><span id="1-1291"> </span><span class="yellow" id="1-1292">1      </span><span id="1-1293"> |</span><span id="1-1294"> </span><span class="yellow" id="1-1295">1         </span><span id="1-1296"> |</span><span id="1-1297"></span></p><p><a></a><span class="yellow" id="1-1298">      TODO (Cucumber::Pending)</span><span id="1-1299"></span></p><p><a></a><span class="yellow" id="1-1300">      ./features/step_definitions/identificacion_steps.rb:56:in `/^que la novedad tiene (\d+) adjunto$/'</span><span id="1-1301"></span></p><p><a></a><span class="yellow" id="1-1302">      features/ver_novedad.feature:18:in `Dado que la novedad tiene 1 adjunto'</span><span id="1-1303"></span></p><p><a></a><span id="1-1304">    </span><span class="cyan" id="1-1305">Entonces veo el titulo "</span><span class="cyan bold" id="1-1306">Mockups disponibles</span><span class="cyan" id="1-1307">"</span><span class="grey" id="1-1308">                            # features/step_definitions/ver_novedad_steps.rb:17</span><span id="1-1309"></span></p><p><a></a><span id="1-1310">    </span><span class="cyan" id="1-1311">Y el mensaje "</span><span class="cyan bold" id="1-1312">Puede ver y validar los bosquejos de la interfaz grafica</span><span class="cyan" id="1-1313">"</span><span class="grey" id="1-1314"> # features/step_definitions/ver_novedad_steps.rb:21</span><span id="1-1315"></span></p><p><a></a><span id="1-1316">    </span><span class="cyan" id="1-1317">Y veo la imagen en la pantalla</span><span class="grey" id="1-1318">                                          # features/step_definitions/ver_novedad_steps.rb:31</span><span id="1-1319"></span></p><p><a></a><span id="1-1320"></span></p><p><a></a><span id="1-1321">11 scenarios (</span><span class="yellow" id="1-1322">1 pending</span><span id="1-1323">, </span><span class="green" id="1-1324">10 passed</span><span id="1-1325">)</span></p><p><a></a><span id="1-1326">66 steps (</span><span class="cyan" id="1-1327">3 skipped</span><span id="1-1328">, </span><span class="yellow" id="1-1329">1 pending</span><span id="1-1330">, </span><span class="green" id="1-1331">62 passed</span><span id="1-1332">)</span></p><p><a></a><span id="1-1333">0m15.357s</span></p><p><a></a><span class="yellow" id="1-1334">[Coveralls] Submitting with config:</span><span id="1-1335"></span></p><p><a></a><span class="yellow" id="1-1336">{</span></p><p><a></a><span id="1-1337">  "environment": {</span></p><p><a></a><span id="1-1338">    "pwd": "/home/travis/build/matiasmasca/Novedades",</span></p><p><a></a><span id="1-1339">    "rails_root": "/home/travis/build/matiasmasca/Novedades",</span></p><p><a></a><span id="1-1340">    "simplecov_root": "/home/travis/build/matiasmasca/Novedades",</span></p><p><a></a><span id="1-1341">    "gem_version": "0.8.2",</span></p><p><a></a><span id="1-1342">    "travis_job_id": "109408547",</span></p><p><a></a><span id="1-1343">    "travis_pull_request": "false"</span></p><p><a></a><span id="1-1344">  },</span></p><p><a></a><span id="1-1345">  "git": {</span></p><p><a></a><span id="1-1346">    "head": {</span></p><p><a></a><span id="1-1347">      "id": "031aa6c34e9c57ef53ec00ca259a69aecf6c6725",</span></p><p><a></a><span id="1-1348">      "author_name": "Matías Mascazzini",</span></p><p><a></a><span id="1-1349">      "author_email": "matiasmasca@gmail.com",</span></p><p><a></a><span id="1-1350">      "committer_name": "Matías Mascazzini",</span></p><p><a></a><span id="1-1351">      "committer_email": "matiasmasca@gmail.com",</span></p><p><a></a><span id="1-1352">      "message": "Add Beerpay badge"</span></p><p><a></a><span id="1-1353">    },</span></p><p><a></a><span id="1-1354">    "branch": "HEAD\n",</span></p><p><a></a><span id="1-1355">    "remotes": [</span></p><p><a></a><span id="1-1356">      {</span></p><p><a></a><span id="1-1357">        "name": "origin",</span></p><p><a></a><span id="1-1358">        "url": "https://github.com/matiasmasca/Novedades.git"</span></p><p><a></a><span id="1-1359">      }</span></p><p><a></a><span id="1-1360">    ]</span></p><p><a></a><span id="1-1361">  },</span></p><p><a></a><span id="1-1362">  "service_job_id": "109408547",</span></p><p><a></a><span id="1-1363">  "service_name": "travis-ci",</span></p><p><a></a><span id="1-1364">  "service_number": null,</span></p><p><a></a><span id="1-1365">  "service_build_url": null,</span></p><p><a></a><span id="1-1366">  "service_branch": null,</span></p><p><a></a><span id="1-1367">  "service_pull_request": null</span></p><p><a></a><span id="1-1368">}</span><span id="1-1369"></span></p><p><a></a><span class="cyan" id="1-1370">[Coveralls] Submitting to https://coveralls.io/api/v1</span><span id="1-1371"></span></p><p><a></a><span class="cyan" id="1-1372">[Coveralls] Job #131.1</span><span id="1-1373"></span></p><p><a></a><span class="cyan" id="1-1374">[Coveralls] </span><span class="underline" id="1-1375">https://coveralls.io/jobs/12041829</span><span id="1-1376"></span></p><p><a></a><span id="1-1377">Coverage is at 56.6%.</span></p><p><a></a><span id="1-1378">Coverage report sent to Coveralls.</span></p><p><a></a><span id="1-1379"></span><span id="1-1380"></span></p><p><a></a><span id="1-1381"></span></p><p><a></a><span class="green bold" id="1-1382">The command "bundle exec rake cucumber" exited with 0.</span><span id="1-1383"></span></p><div class="fold-start fold active" id="fold-start-dpl.0"><span class="fold-name">dpl.0</span><p><a></a><span class="clears" id="1-1391"></span><span id="1-1392">Fetching: dpl-1.8.11.gem (100%)</span></p><p><a></a><span id="1-1393">Successfully installed dpl-1.8.11</span></p><p><a></a><span id="1-1394">1 gem installed</span></p><p><a></a><span id="1-1395"></span><span id="1-1396"></span></p></div><div class="fold-end" id="fold-end-dpl.0"></div><p><a></a><span title="This command finished after 78.30 seconds." class="duration" id="1-1398">78.30s</span><span id="1-1399">--fuzzy
+ do ruby -S dpl --provider=heroku 
+--api_key=379949e2-ddf5-4b29-80fc-b88253c4a5d8 --app=terciar-novedades 
+--run=rake db:drop --run=rake db:schema:load --trace --run=rake db:seed 
+--run=restart --fold</span></p><p><a></a><span id="1-1400">rvm 1.26.10 
+(latest-minor) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal
+ Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]</span></p><div class="fold-start fold active" id="fold-start-dpl.1"><span class="fold-name">dpl.1</span><p><a></a><span class="yellow" id="1-1402">Installing deploy dependencies</span><span id="1-1403"></span></p><p><a></a><span class="clears" id="1-1418"></span><span id="1-1419">Fetching: excon-0.45.4.gem (100%)</span></p><p><a></a><span id="1-1420">Successfully installed excon-0.45.4</span></p><p><a></a><span class="clears" id="1-1423"></span><span id="1-1424">Fetching: multi_json-1.11.2.gem (100%)</span></p><p><a></a><span id="1-1425">Successfully installed multi_json-1.11.2</span></p><p><a></a><span class="clears" id="1-1429"></span><span id="1-1430">Fetching: heroku-api-0.4.1.gem (100%)</span></p><p><a></a><span id="1-1431">Successfully installed heroku-api-0.4.1</span></p><p><a></a><span id="1-1432">3 gems installed</span></p><p><a></a><span class="clears" id="1-1442"></span><span id="1-1443">Fetching: rendezvous-0.1.2.gem (100%)</span></p><p><a></a><span id="1-1444">Successfully installed rendezvous-0.1.2</span></p><p><a></a><span id="1-1445">1 gem installed</span></p><p><a></a><span id="1-1446"></span></p></div><div class="fold-end" id="fold-end-dpl.1"></div><div class="fold-start fold active" id="fold-start-dpl.2"><span class="fold-name">dpl.2</span><p><a></a><span class="yellow" id="1-1449">Preparing deploy</span><span id="1-1450"></span></p><p><a></a><span id="1-1451">authenticated as matiasmasca@gmail.com</span></p><p><a></a><span id="1-1452">checking for app 'terciar-novedades'</span></p><p><a></a><span id="1-1453">found app 'terciar-novedades'</span></p><p><a></a><span id="1-1454">Saved working directory and index state WIP on (no branch): 031aa6c Add Beerpay badge</span></p><p><a></a><span id="1-1455">HEAD is now at 031aa6c Add Beerpay badge</span></p><p><a></a><span id="1-1456"></span></p></div><div class="fold-end" id="fold-end-dpl.2"></div><div class="fold-start fold active" id="fold-start-dpl.3"><span class="fold-name">dpl.3</span><p><a></a><span class="yellow" id="1-1459">Deploying application</span><span id="1-1460"></span></p><p><a></a><span id="1-1461">creating application archive</span></p><p><a></a><span id="1-1462">uploading application archive</span></p><p><a></a><span id="1-1463">triggering new deployment</span></p><p><a></a><span id="1-1464"></span></p><p><a></a><span id="1-1465">-----&gt; Ruby app detected</span></p><p><a></a><span id="1-1466">-----&gt; Compiling Ruby/Rails</span></p><p><a></a><span id="1-1467">-----&gt; Using Ruby version: ruby-2.2.0</span></p><p><a></a><span id="1-1468">-----&gt; Installing dependencies using bundler 1.9.7</span></p><p><a></a><span id="1-1469">       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment</span></p><p><a></a><span id="1-1470">       Using rake 10.4.2</span></p><p><a></a><span id="1-1471">       Using i18n 0.7.0</span></p><p><a></a><span id="1-1472">       Using json 1.8.3</span></p><p><a></a><span id="1-1473">       Using minitest 5.7.0</span></p><p><a></a><span id="1-1474">       Using thread_safe 0.3.5</span></p><p><a></a><span id="1-1475">       Using builder 3.2.2</span></p><p><a></a><span id="1-1476">       Using erubis 2.7.0</span></p><p><a></a><span id="1-1477">       Using mini_portile 0.6.2</span></p><p><a></a><span id="1-1478">       Using rack 1.6.4</span></p><p><a></a><span id="1-1479">       Using mime-types 2.6.1</span></p><p><a></a><span id="1-1480">       Using arel 6.0.3</span></p><p><a></a><span id="1-1481">       Using execjs 2.5.2</span></p><p><a></a><span id="1-1482">       Using bcrypt 3.1.10</span></p><p><a></a><span id="1-1483">       Using sass 3.4.16</span></p><p><a></a><span id="1-1484">       Using thor 0.19.1</span></p><p><a></a><span id="1-1485">       Using coffee-script-source 1.9.1.1</span></p><p><a></a><span id="1-1486">       Using unf_ext 0.0.7.1</span></p><p><a></a><span id="1-1487">       Using netrc 0.10.3</span></p><p><a></a><span id="1-1488">       Using docile 1.1.5</span></p><p><a></a><span id="1-1489">       Using simplecov-html 0.10.0</span></p><p><a></a><span id="1-1490">       Using tins 1.5.4</span></p><p><a></a><span id="1-1491">       Using orm_adapter 0.5.0</span></p><p><a></a><span id="1-1492">       Using bundler 1.9.7</span></p><p><a></a><span id="1-1493">       Using multi_json 1.11.2</span></p><p><a></a><span id="1-1494">       Using mini_magick 4.2.9</span></p><p><a></a><span id="1-1495">       Using pg 0.18.2</span></p><p><a></a><span id="1-1496">       Using rails_serve_static_assets 0.0.4</span></p><p><a></a><span id="1-1497">       Using rails_stdout_logging 0.0.3</span></p><p><a></a><span id="1-1498">       Using rdoc 4.2.0</span></p><p><a></a><span id="1-1499">       Using tilt 1.4.1</span></p><p><a></a><span id="1-1500">       Using tzinfo 1.2.2</span></p><p><a></a><span id="1-1501">       Using nokogiri 1.6.6.2</span></p><p><a></a><span id="1-1502">       Using mail 2.6.3</span></p><p><a></a><span id="1-1503">       Using rack-test 0.6.3</span></p><p><a></a><span id="1-1504">       Using warden 1.2.3</span></p><p><a></a><span id="1-1505">       Using sprockets 3.2.0</span></p><p><a></a><span id="1-1506">       Using rack-protection 1.5.3</span></p><p><a></a><span id="1-1507">       Using autoprefixer-rails 5.2.1.1</span></p><p><a></a><span id="1-1508">       Using uglifier 2.7.1</span></p><p><a></a><span id="1-1509">       Using coffee-script 2.4.1</span></p><p><a></a><span id="1-1510">       Using unf 0.1.4</span></p><p><a></a><span id="1-1511">       Using simplecov 0.10.0</span></p><p><a></a><span id="1-1512">       Using term-ansicolor 1.3.2</span></p><p><a></a><span id="1-1513">       Using rails_12factor 0.0.3</span></p><p><a></a><span id="1-1514">       Using activesupport 4.2.3</span></p><p><a></a><span id="1-1515">       Using sdoc 0.4.1</span></p><p><a></a><span id="1-1516">       Using sinatra 1.4.6</span></p><p><a></a><span id="1-1517">       Using bootstrap-sass 3.3.5.1</span></p><p><a></a><span id="1-1518">       Using domain_name 0.5.24</span></p><p><a></a><span id="1-1519">       Using loofah 2.0.2</span></p><p><a></a><span id="1-1520">       Using rails-deprecated_sanitizer 1.0.3</span></p><p><a></a><span id="1-1521">       Using globalid 0.3.6</span></p><p><a></a><span id="1-1522">       Using activemodel 4.2.3</span></p><p><a></a><span id="1-1523">       Using jbuilder 2.3.1</span></p><p><a></a><span id="1-1524">       Using http-cookie 1.0.2</span></p><p><a></a><span id="1-1525">       Using rails-html-sanitizer 1.0.2</span></p><p><a></a><span id="1-1526">       Using rails-dom-testing 1.0.6</span></p><p><a></a><span id="1-1527">       Using activejob 4.2.3</span></p><p><a></a><span id="1-1528">       Using activerecord 4.2.3</span></p><p><a></a><span id="1-1529">       Using rest-client 1.8.0</span></p><p><a></a><span id="1-1530">       Using actionview 4.2.3</span></p><p><a></a><span id="1-1531">       Using actionpack 4.2.3</span></p><p><a></a><span id="1-1532">       Using refile 0.5.5 from https://github.com/refile/refile.git (at master)</span></p><p><a></a><span id="1-1533">       Using actionmailer 4.2.3</span></p><p><a></a><span id="1-1534">       Using railties 4.2.3</span></p><p><a></a><span id="1-1535">       Using sprockets-rails 2.3.2</span></p><p><a></a><span id="1-1536">       Using bootswatch-rails 3.3.5</span></p><p><a></a><span id="1-1537">       Using coffee-rails 4.1.0</span></p><p><a></a><span id="1-1538">       Using responders 2.1.0</span></p><p><a></a><span id="1-1539">       Using rails 4.2.3</span></p><p><a></a><span id="1-1540">       Using jquery-rails 4.0.4</span></p><p><a></a><span id="1-1541">       Using sass-rails 5.0.3</span></p><p><a></a><span id="1-1542">       Using turbolinks 2.5.3</span></p><p><a></a><span id="1-1543">       Using devise 3.5.1</span></p><p><a></a><span id="1-1544">       Using gretel 3.0.8</span></p><p><a></a><span id="1-1545">       Using coveralls 0.8.2</span></p><p><a></a><span id="1-1546">       Bundle complete! 28 Gemfile dependencies, 76 gems now installed.</span></p><p><a></a><span id="1-1547">       Gems in the groups development and test were not installed.</span></p><p><a></a><span id="1-1548">       Bundled gems are installed into ./vendor/bundle.</span></p><p><a></a><span id="1-1549">       Bundle completed (0.41s)</span></p><p><a></a><span id="1-1550">       Cleaning up the bundler cache.</span></p><p><a></a><span id="1-1551">-----&gt; Preparing app for Rails asset pipeline</span></p><p><a></a><span id="1-1552">       Running: rake assets:precompile</span></p><p><a></a><span id="1-1553">       Asset precompilation completed (16.09s)</span></p><p><a></a><span id="1-1554">       Cleaning assets</span></p><p><a></a><span id="1-1555">       Running: rake assets:clean</span></p><p><a></a><span id="1-1556"></span></p><p><a></a><span id="1-1557">###### WARNING:</span></p><p><a></a><span id="1-1558">       No Procfile detected, using the default web server (webrick)</span></p><p><a></a><span id="1-1559">       https://devcenter.heroku.com/articles/ruby-default-web-server</span></p><p><a></a><span id="1-1560"></span></p><p><a></a><span id="1-1561">-----&gt; Discovering process types</span></p><p><a></a><span id="1-1562">       Procfile declares types     -&gt; (none)</span></p><p><a></a><span id="1-1563">       Default types for buildpack -&gt; console, rake, web, worker</span></p><p><a></a><span id="1-1564"></span></p><p><a></a><span id="1-1565">-----&gt; Compressing...</span></p><p><a></a><span id="1-1566">       Done: 55.5M</span></p><p><a></a><span id="1-1567">-----&gt; Launching...</span></p><p><a></a><span id="1-1568">       Released v141</span></p><p><a></a><span id="1-1569">       https://terciar-novedades.herokuapp.com/ deployed to Heroku</span></p><p><a></a><span id="1-1570"></span></p><p><a></a><span id="1-1571">heroku build still pending</span></p><p><a></a><span id="1-1572"></span></p></div><div class="fold-end" id="fold-end-dpl.3"></div><div class="fold-start fold active" id="fold-start-dpl.4"><span class="fold-name">dpl.4</span><p><a></a><span class="yellow" id="1-1575">Running "rake db:drop"</span><span id="1-1576"></span></p><p><a></a><span id="1-1577">FATAL:  permission denied for database "postgres"</span></p><p><a></a><span id="1-1578">DETAIL:  User does not have CONNECT privilege.</span></p><p><a></a><span id="1-1579">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in
+ `initialize'</span></p><p><a></a><span id="1-1580">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in `new'</span></p><p><a></a><span id="1-1581">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:655:in
+ `connect'</span></p><p><a></a><span id="1-1582">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:242:in
+ `initialize'</span></p><p><a></a><span id="1-1583">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in `new'</span></p><p><a></a><span id="1-1584">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:44:in
+ `postgresql_connection'</span></p><p><a></a><span id="1-1585">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in
+ `new_connection'</span></p><p><a></a><span id="1-1586">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in
+ `checkout_new_connection'</span></p><p><a></a><span id="1-1587">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in
+ `acquire_connection'</span></p><p><a></a><span id="1-1588">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in
+ `block in checkout'</span></p><p><a></a><span id="1-1589">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'</span></p><p><a></a><span id="1-1590">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in
+ `checkout'</span></p><p><a></a><span id="1-1591">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in
+ `block in connection'</span></p><p><a></a><span id="1-1592">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'</span></p><p><a></a><span id="1-1593">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in
+ `connection'</span></p><p><a></a><span id="1-1594">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in
+ `retrieve_connection'</span></p><p><a></a><span id="1-1595">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_handling.rb:113:in `retrieve_connection'</span></p><p><a></a><span id="1-1596">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/connection_handling.rb:87:in `connection'</span></p><p><a></a><span id="1-1597">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/postgresql_database_tasks.rb:8:in `connection'</span></p><p><a></a><span id="1-1598">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/postgresql_database_tasks.rb:30:in `drop'</span></p><p><a></a><span id="1-1599">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:114:in `drop'</span></p><p><a></a><span id="1-1600">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:128:in `block in drop_current'</span></p><p><a></a><span id="1-1601">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:275:in
+ `block in each_current_configuration'</span></p><p><a></a><span id="1-1602">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:274:in `each'</span></p><p><a></a><span id="1-1603">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:274:in
+ `each_current_configuration'</span></p><p><a></a><span id="1-1604">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/tasks/database_tasks.rb:127:in `drop_current'</span></p><p><a></a><span id="1-1605">/app/vendor/bundle/ruby/2.2.0/gems/activerecord-4.2.3/lib/active_record/railties/databases.rake:28:in
+ `block (2 levels) in &lt;top (required)&gt;'</span></p><p><a></a><span id="1-1606">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:240:in `call'</span></p><p><a></a><span id="1-1607">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:240:in `block in execute'</span></p><p><a></a><span id="1-1608">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:235:in `each'</span></p><p><a></a><span id="1-1609">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:235:in `execute'</span></p><p><a></a><span id="1-1610">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:179:in `block in invoke_with_call_chain'</span></p><p><a></a><span id="1-1611">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'</span></p><p><a></a><span id="1-1612">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:172:in `invoke_with_call_chain'</span></p><p><a></a><span id="1-1613">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:165:in `invoke'</span></p><p><a></a><span id="1-1614">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:150:in `invoke_task'</span></p><p><a></a><span id="1-1615">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:106:in `block (2 levels) in top_level'</span></p><p><a></a><span id="1-1616">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:106:in `each'</span></p><p><a></a><span id="1-1617">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:106:in `block in top_level'</span></p><p><a></a><span id="1-1618">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:115:in `run_with_threads'</span></p><p><a></a><span id="1-1619">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:100:in `top_level'</span></p><p><a></a><span id="1-1620">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:78:in `block in run'</span></p><p><a></a><span id="1-1621">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:176:in `standard_exception_handling'</span></p><p><a></a><span id="1-1622">/app/vendor/ruby-2.2.0/lib/ruby/2.2.0/rake/application.rb:75:in `run'</span></p><p><a></a><span id="1-1623">/app/bin/rake:4:in `&lt;main&gt;'</span></p><p><a></a><span id="1-1624">Couldn't drop d4ga8c5rnofiqc</span></p><p><a></a><span id="1-1625"></span></p></div><div class="fold-end" id="fold-end-dpl.4"></div><div class="fold-start fold active" id="fold-start-dpl.5"><span class="fold-name">dpl.5</span><p><a></a><span class="yellow" id="1-1628">Running "rake db:schema:load --trace"</span><span id="1-1629"></span></p><p><a></a><span id="1-1630">** Invoke db:schema:load (first_time)</span></p><p><a></a><span id="1-1631">** Invoke environment (first_time)</span></p><p><a></a><span id="1-1632">** Execute environment</span></p><p><a></a><span id="1-1633">** Invoke db:load_config (first_time)</span></p><p><a></a><span id="1-1634">** Execute db:load_config</span></p><p><a></a><span id="1-1635">** Execute db:schema:load</span></p><p><a></a><span id="1-1636">-- create_table("attachments", {:force=&gt;:cascade})</span></p><p><a></a><span id="1-1637">  </span><span class="cyan bold" id="1-1638"> (303.0ms)</span><span id="1-1639">  </span><span class="bold" id="1-1640">DROP TABLE "attachments" CASCADE</span><span id="1-1641"></span></p><p><a></a><span id="1-1642">  </span><span class="magenta bold" id="1-1643"> (495.3ms)</span><span id="1-1644">
+  CREATE TABLE "attachments" ("id" serial primary key, 
+"profile_image_id" character varying, "title" character varying, 
+"profile_image_filename" character varying, "profile_image_size" 
+integer, "profile_image_content_type" character varying, 
+"notification_id" integer, "created_at" timestamp NOT NULL, "updated_at"
+ timestamp NOT NULL) </span></p><p><a></a><span id="1-1645">   -&gt; 1.8112s</span></p><p><a></a><span id="1-1646">-- add_index("attachments", ["notification_id"], {:name=&gt;"index_attachments_on_notification_id"})</span></p><p><a></a><span id="1-1647">  </span><span class="cyan bold" id="1-1648"> (20.5ms)</span><span id="1-1649">  </span><span class="bold" id="1-1650">CREATE  INDEX  "index_attachments_on_notification_id" ON "attachments"  ("notification_id")</span><span id="1-1651"></span></p><p><a></a><span id="1-1652">   -&gt; 0.0341s</span></p><p><a></a><span id="1-1653">-- create_table("notifications", {:force=&gt;:cascade})</span></p><p><a></a><span id="1-1654">  </span><span class="magenta bold" id="1-1655"> (10.0ms)</span><span id="1-1656">  DROP TABLE "notifications" CASCADE</span></p><p><a></a><span id="1-1657">  </span><span class="cyan bold" id="1-1658"> (9.7ms)</span><span id="1-1659">  </span><span class="bold" id="1-1660">CREATE
+ TABLE "notifications" ("id" serial primary key, "project_id" integer, 
+"title" character varying, "date" date, "message" text, "created_at" 
+timestamp NOT NULL, "updated_at" timestamp NOT NULL, "read_mark" boolean
+ DEFAULT 'f') </span><span id="1-1661"></span></p><p><a></a><span id="1-1662">   -&gt; 0.0259s</span></p><p><a></a><span id="1-1663">-- add_index("notifications", ["project_id"], {:name=&gt;"index_notifications_on_project_id"})</span></p><p><a></a><span id="1-1664">  </span><span class="magenta bold" id="1-1665"> (23.6ms)</span><span id="1-1666">  CREATE  INDEX  "index_notifications_on_project_id" ON "notifications"  ("project_id")</span></p><p><a></a><span id="1-1667">   -&gt; 0.0272s</span></p><p><a></a><span id="1-1668">-- create_table("projects", {:force=&gt;:cascade})</span></p><p><a></a><span id="1-1669">  </span><span class="cyan bold" id="1-1670"> (8.1ms)</span><span id="1-1671">  </span><span class="bold" id="1-1672">DROP TABLE "projects" CASCADE</span><span id="1-1673"></span></p><p><a></a><span id="1-1674">  </span><span class="magenta bold" id="1-1675"> (118.3ms)</span><span id="1-1676">
+  CREATE TABLE "projects" ("id" serial primary key, "name" character 
+varying, "user_id" integer, "created_at" timestamp NOT NULL, 
+"updated_at" timestamp NOT NULL) </span></p><p><a></a><span id="1-1677">   -&gt; 0.1288s</span></p><p><a></a><span id="1-1678">-- add_index("projects", ["user_id"], {:name=&gt;"index_projects_on_user_id"})</span></p><p><a></a><span id="1-1679">  </span><span class="cyan bold" id="1-1680"> (18.7ms)</span><span id="1-1681">  </span><span class="bold" id="1-1682">CREATE  INDEX  "index_projects_on_user_id" ON "projects"  ("user_id")</span><span id="1-1683"></span></p><p><a></a><span id="1-1684">   -&gt; 0.0230s</span></p><p><a></a><span id="1-1685">-- create_table("users", {:force=&gt;:cascade})</span></p><p><a></a><span id="1-1686">  </span><span class="magenta bold" id="1-1687"> (12.6ms)</span><span id="1-1688">  DROP TABLE "users" CASCADE</span></p><p><a></a><span id="1-1689">  </span><span class="cyan bold" id="1-1690"> (12.6ms)</span><span id="1-1691">  </span><span class="bold" id="1-1692">CREATE
+ TABLE "users" ("id" serial primary key, "email" character varying 
+DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' 
+NOT NULL, "reset_password_token" character varying, 
+"reset_password_sent_at" timestamp, "remember_created_at" timestamp, 
+"sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" 
+timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character 
+varying, "last_sign_in_ip" character varying, "failed_attempts" integer 
+DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" 
+timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT 
+NULL, "nombre" character varying, "tipo" integer DEFAULT 2 NOT NULL, 
+"habilitado" boolean DEFAULT 't') </span><span id="1-1693"></span></p><p><a></a><span id="1-1694">   -&gt; 0.0464s</span></p><p><a></a><span id="1-1695">-- add_index("users", ["email"], {:name=&gt;"index_users_on_email", :unique=&gt;true})</span></p><p><a></a><span id="1-1696">  </span><span class="magenta bold" id="1-1697"> (4.6ms)</span><span id="1-1698">  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")</span></p><p><a></a><span id="1-1699">   -&gt; 0.0079s</span></p><p><a></a><span id="1-1700">-- add_index("users", ["reset_password_token"], {:name=&gt;"index_users_on_reset_password_token", :unique=&gt;true})</span></p><p><a></a><span id="1-1701">  </span><span class="cyan bold" id="1-1702"> (3.9ms)</span><span id="1-1703">  </span><span class="bold" id="1-1704">CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")</span><span id="1-1705"></span></p><p><a></a><span id="1-1706">   -&gt; 0.0073s</span></p><p><a></a><span id="1-1707">-- add_index("users", ["unlock_token"], {:name=&gt;"index_users_on_unlock_token", :unique=&gt;true})</span></p><p><a></a><span id="1-1708">  </span><span class="magenta bold" id="1-1709"> (8.1ms)</span><span id="1-1710">  CREATE UNIQUE INDEX  "index_users_on_unlock_token" ON "users"  ("unlock_token")</span></p><p><a></a><span id="1-1711">   -&gt; 0.0117s</span></p><p><a></a><span id="1-1712">-- initialize_schema_migrations_table()</span></p><p><a></a><span id="1-1713">   -&gt; 0.0026s</span></p><p><a></a><span id="1-1714">  </span><span class="cyan bold" id="1-1715"> (5.7ms)</span><span id="1-1716">  </span><span class="bold" id="1-1717">SELECT version FROM "schema_migrations"</span><span id="1-1718"></span></p><p><a></a><span id="1-1719"></span></p></div><div class="fold-end" id="fold-end-dpl.5"></div><div class="fold-start fold active" id="fold-start-dpl.6"><span class="fold-name">dpl.6</span><p><a></a><span class="yellow" id="1-1722">Running "rake db:seed"</span><span id="1-1723"></span></p><p><a></a><span id="1-1724">  </span><span class="cyan bold" id="1-1725">ActiveRecord::SchemaMigration Load (1.7ms)</span><span id="1-1726">  </span><span class="bold" id="1-1727">SELECT "schema_migrations".* FROM "schema_migrations"</span><span id="1-1728"></span></p><p><a></a><span id="1-1729">  </span><span class="magenta bold" id="1-1730"> (1.7ms)</span><span id="1-1731">  BEGIN</span></p><p><a></a><span id="1-1732">  </span><span class="cyan bold" id="1-1733">User Exists (1.9ms)</span><span id="1-1734">  </span><span class="bold" id="1-1735">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'don@deroche.com' LIMIT 1</span><span id="1-1736"></span></p><p><a></a><span id="1-1737">  </span><span class="magenta bold" id="1-1738">SQL (1.7ms)</span><span id="1-1739">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "DeRoche"], ["email", "don@deroche.com"], 
+["encrypted_password", 
+"$2a$10$sqCP5Q7teq1Xfymcom5plu7bPjSOph3JUoniDWn1uwFUvGAB.hvOm"], 
+["created_at", "2016-02-15 17:58:09.703125"], ["updated_at", "2016-02-15
+ 17:58:09.703125"]]</span></p><p><a></a><span id="1-1740">  </span><span class="cyan bold" id="1-1741"> (2.2ms)</span><span id="1-1742">  </span><span class="bold" id="1-1743">COMMIT</span><span id="1-1744"></span></p><p><a></a><span id="1-1745">  </span><span class="magenta bold" id="1-1746"> (1.3ms)</span><span id="1-1747">  BEGIN</span></p><p><a></a><span id="1-1748">  </span><span class="cyan bold" id="1-1749">User Exists (1.5ms)</span><span id="1-1750">  </span><span class="bold" id="1-1751">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'dostorres@hobbit.com' LIMIT 1</span><span id="1-1752"></span></p><p><a></a><span id="1-1753">  </span><span class="magenta bold" id="1-1754">SQL (1.6ms)</span><span id="1-1755">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"habilitado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, 
+$6) RETURNING "id"  [["nombre", "Gregorio hobbit"], ["email", 
+"dostorres@hobbit.com"], ["encrypted_password", 
+"$2a$10$LZNHIZJH06dOzDrtKU4uF.rhYpeju3.bW0JYc7c/r88ZvH4ESiNPW"], 
+["habilitado", "f"], ["created_at", "2016-02-15 17:58:09.816923"], 
+["updated_at", "2016-02-15 17:58:09.816923"]]</span></p><p><a></a><span id="1-1756">  </span><span class="cyan bold" id="1-1757"> (9.7ms)</span><span id="1-1758">  </span><span class="bold" id="1-1759">COMMIT</span><span id="1-1760"></span></p><p><a></a><span id="1-1761">  </span><span class="magenta bold" id="1-1762"> (1.2ms)</span><span id="1-1763">  BEGIN</span></p><p><a></a><span id="1-1764">  </span><span class="cyan bold" id="1-1765">User Exists (2.5ms)</span><span id="1-1766">  </span><span class="bold" id="1-1767">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'examples@itaca.mx' LIMIT 1</span><span id="1-1768"></span></p><p><a></a><span id="1-1769">  </span><span class="magenta bold" id="1-1770">SQL (1.5ms)</span><span id="1-1771">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"habilitado", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, 
+$6) RETURNING "id"  [["nombre", "Jazmin Itaca"], ["email", 
+"examples@itaca.mx"], ["encrypted_password", 
+"$2a$10$EYNWQqpGfTS4G5chwL5fu.sdMugn4N8soeVasIs5Eorx0Ad0I5y2."], 
+["habilitado", "f"], ["created_at", "2016-02-15 17:58:09.930753"], 
+["updated_at", "2016-02-15 17:58:09.930753"]]</span></p><p><a></a><span id="1-1772">  </span><span class="cyan bold" id="1-1773"> (2.2ms)</span><span id="1-1774">  </span><span class="bold" id="1-1775">COMMIT</span><span id="1-1776"></span></p><p><a></a><span id="1-1777">  </span><span class="magenta bold" id="1-1778"> (1.5ms)</span><span id="1-1779">  BEGIN</span></p><p><a></a><span id="1-1780">  </span><span class="cyan bold" id="1-1781">User Exists (1.6ms)</span><span id="1-1782">  </span><span class="bold" id="1-1783">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'contacto@terciar.ga' LIMIT 1</span><span id="1-1784"></span></p><p><a></a><span id="1-1785">  </span><span class="magenta bold" id="1-1786">SQL (1.3ms)</span><span id="1-1787">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Ramon To"], ["email", "contacto@terciar.ga"], 
+["encrypted_password", 
+"$2a$10$2GSP.44r1jcl3L6N4mfztOTm41vAUHZDoNz.9pAGmN3oOr7gLsr2C"], 
+["created_at", "2016-02-15 17:58:10.031603"], ["updated_at", "2016-02-15
+ 17:58:10.031603"]]</span></p><p><a></a><span id="1-1788">  </span><span class="cyan bold" id="1-1789"> (1.9ms)</span><span id="1-1790">  </span><span class="bold" id="1-1791">COMMIT</span><span id="1-1792"></span></p><p><a></a><span id="1-1793">  </span><span class="magenta bold" id="1-1794"> (1.5ms)</span><span id="1-1795">  BEGIN</span></p><p><a></a><span id="1-1796">  </span><span class="cyan bold" id="1-1797">User Exists (1.5ms)</span><span id="1-1798">  </span><span class="bold" id="1-1799">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'unemail2@go.com' LIMIT 1</span><span id="1-1800"></span></p><p><a></a><span id="1-1801">  </span><span class="magenta bold" id="1-1802">SQL (1.6ms)</span><span id="1-1803">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Micaëla"], ["email", "unemail2@go.com"], 
+["encrypted_password", 
+"$2a$10$rkab67qmxR.QJllLdOtzYOoDzbzE8/oWkAYl0Qw9DBra4YAHYE.ae"], 
+["created_at", "2016-02-15 17:58:10.189891"], ["updated_at", "2016-02-15
+ 17:58:10.189891"]]</span></p><p><a></a><span id="1-1804">  </span><span class="cyan bold" id="1-1805"> (2.0ms)</span><span id="1-1806">  </span><span class="bold" id="1-1807">COMMIT</span><span id="1-1808"></span></p><p><a></a><span id="1-1809">  </span><span class="magenta bold" id="1-1810"> (1.3ms)</span><span id="1-1811">  BEGIN</span></p><p><a></a><span id="1-1812">  </span><span class="cyan bold" id="1-1813">User Exists (1.5ms)</span><span id="1-1814">  </span><span class="bold" id="1-1815">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'simon@terciar.ga' LIMIT 1</span><span id="1-1816"></span></p><p><a></a><span id="1-1817">  </span><span class="magenta bold" id="1-1818">SQL (1.5ms)</span><span id="1-1819">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Luca ST"], ["email", "simon@terciar.ga"], 
+["encrypted_password", 
+"$2a$10$3CI7fzCG3H7wAB1umjWLP.tBeRZ6wiI.rlSDph.wjYsujDGnh4ehe"], 
+["created_at", "2016-02-15 17:58:10.305728"], ["updated_at", "2016-02-15
+ 17:58:10.305728"]]</span></p><p><a></a><span id="1-1820">  </span><span class="cyan bold" id="1-1821"> (2.4ms)</span><span id="1-1822">  </span><span class="bold" id="1-1823">COMMIT</span><span id="1-1824"></span></p><p><a></a><span id="1-1825">  </span><span class="magenta bold" id="1-1826"> (1.3ms)</span><span id="1-1827">  BEGIN</span></p><p><a></a><span id="1-1828">  </span><span class="cyan bold" id="1-1829">User Exists (2.3ms)</span><span id="1-1830">  </span><span class="bold" id="1-1831">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'unemail4@go.com' LIMIT 1</span><span id="1-1832"></span></p><p><a></a><span id="1-1833">  </span><span class="magenta bold" id="1-1834">SQL (1.4ms)</span><span id="1-1835">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Pedro"], ["email", "unemail4@go.com"], 
+["encrypted_password", 
+"$2a$10$MpJFbBO4MdU.WLgOffBAcukk2r1xSRCjb0grmfADV56yiQCl2XMD6"], 
+["created_at", "2016-02-15 17:58:10.466184"], ["updated_at", "2016-02-15
+ 17:58:10.466184"]]</span></p><p><a></a><span id="1-1836">  </span><span class="cyan bold" id="1-1837"> (2.8ms)</span><span id="1-1838">  </span><span class="bold" id="1-1839">COMMIT</span><span id="1-1840"></span></p><p><a></a><span id="1-1841">  </span><span class="magenta bold" id="1-1842"> (2.4ms)</span><span id="1-1843">  BEGIN</span></p><p><a></a><span id="1-1844">  </span><span class="cyan bold" id="1-1845">User Exists (1.4ms)</span><span id="1-1846">  </span><span class="bold" id="1-1847">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'unemail5@go.com' LIMIT 1</span><span id="1-1848"></span></p><p><a></a><span id="1-1849">  </span><span class="magenta bold" id="1-1850">SQL (1.3ms)</span><span id="1-1851">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Pablo"], ["email", "unemail5@go.com"], 
+["encrypted_password", 
+"$2a$10$iuJy87Bfrhy6sjYVty7LquIH92ICiBVfP5h4aivnPUrEoh37GWMTa"], 
+["created_at", "2016-02-15 17:58:10.611646"], ["updated_at", "2016-02-15
+ 17:58:10.611646"]]</span></p><p><a></a><span id="1-1852">  </span><span class="cyan bold" id="1-1853"> (1.9ms)</span><span id="1-1854">  </span><span class="bold" id="1-1855">COMMIT</span><span id="1-1856"></span></p><p><a></a><span id="1-1857">  </span><span class="magenta bold" id="1-1858"> (9.5ms)</span><span id="1-1859">  BEGIN</span></p><p><a></a><span id="1-1860">  </span><span class="cyan bold" id="1-1861">User Exists (2.8ms)</span><span id="1-1862">  </span><span class="bold" id="1-1863">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jurado1@go.com' LIMIT 1</span><span id="1-1864"></span></p><p><a></a><span id="1-1865">  </span><span class="magenta bold" id="1-1866">SQL (10.9ms)</span><span id="1-1867">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Paulo"], ["email", "jurado1@go.com"], 
+["encrypted_password", 
+"$2a$10$8jFPfBat/C71cRkqwIEcvO30YaD0VeKBRaPFo8O23jw7/iHboUTee"], 
+["created_at", "2016-02-15 17:58:10.738655"], ["updated_at", "2016-02-15
+ 17:58:10.738655"]]</span></p><p><a></a><span id="1-1868">  </span><span class="cyan bold" id="1-1869"> (2.1ms)</span><span id="1-1870">  </span><span class="bold" id="1-1871">COMMIT</span><span id="1-1872"></span></p><p><a></a><span id="1-1873">  </span><span class="magenta bold" id="1-1874"> (1.2ms)</span><span id="1-1875">  BEGIN</span></p><p><a></a><span id="1-1876">  </span><span class="cyan bold" id="1-1877">User Exists (1.4ms)</span><span id="1-1878">  </span><span class="bold" id="1-1879">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jurado2@go.com' LIMIT 1</span><span id="1-1880"></span></p><p><a></a><span id="1-1881">  </span><span class="magenta bold" id="1-1882">SQL (1.6ms)</span><span id="1-1883">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Gregory"], ["email", "jurado2@go.com"], 
+["encrypted_password", 
+"$2a$10$ga7QLNOpLKZMmUqezh3Z/.7gSNnxpFSaaVrIiGRzBzNvHWgg.sYS."], 
+["created_at", "2016-02-15 17:58:10.849639"], ["updated_at", "2016-02-15
+ 17:58:10.849639"]]</span></p><p><a></a><span id="1-1884">  </span><span class="cyan bold" id="1-1885"> (2.9ms)</span><span id="1-1886">  </span><span class="bold" id="1-1887">COMMIT</span><span id="1-1888"></span></p><p><a></a><span id="1-1889">  </span><span class="magenta bold" id="1-1890"> (1.3ms)</span><span id="1-1891">  BEGIN</span></p><p><a></a><span id="1-1892">  </span><span class="cyan bold" id="1-1893">User Exists (1.3ms)</span><span id="1-1894">  </span><span class="bold" id="1-1895">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jurado3@go.com' LIMIT 1</span><span id="1-1896"></span></p><p><a></a><span id="1-1897">  </span><span class="magenta bold" id="1-1898">SQL (1.3ms)</span><span id="1-1899">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  
+[["nombre", "Yisela"], ["email", "jurado3@go.com"], 
+["encrypted_password", 
+"$2a$10$AVsrYSAbD02LoeUr0YO9x.smYNOiVf0gVpMmkTElkQNP7pfmWrNSG"], 
+["created_at", "2016-02-15 17:58:10.951521"], ["updated_at", "2016-02-15
+ 17:58:10.951521"]]</span></p><p><a></a><span id="1-1900">  </span><span class="cyan bold" id="1-1901"> (2.0ms)</span><span id="1-1902">  </span><span class="bold" id="1-1903">COMMIT</span><span id="1-1904"></span></p><p><a></a><span id="1-1905">  </span><span class="magenta bold" id="1-1906"> (3.7ms)</span><span id="1-1907">  BEGIN</span></p><p><a></a><span id="1-1908">  </span><span class="cyan bold" id="1-1909">User Exists (1.4ms)</span><span id="1-1910">  </span><span class="bold" id="1-1911">SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@estudio.com' LIMIT 1</span><span id="1-1912"></span></p><p><a></a><span id="1-1913">  </span><span class="magenta bold" id="1-1914">SQL (3.4ms)</span><span id="1-1915">
+  INSERT INTO "users" ("nombre", "email", "encrypted_password", "tipo", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"  [["nombre", "Dr. Pepito"], ["email", "admin@estudio.com"], 
+["encrypted_password", 
+"$2a$10$h4htQWaFNrSXw.vGGqNs5.SU5qpEEi/XFBdI/riRtGWeb3ZEmAi8O"], 
+["tipo", 1], ["created_at", "2016-02-15 17:58:11.059481"], 
+["updated_at", "2016-02-15 17:58:11.059481"]]</span></p><p><a></a><span id="1-1916">  </span><span class="cyan bold" id="1-1917"> (2.4ms)</span><span id="1-1918">  </span><span class="bold" id="1-1919">COMMIT</span><span id="1-1920"></span></p><p><a></a><span id="1-1921">  </span><span class="magenta bold" id="1-1922"> (9.4ms)</span><span id="1-1923">  BEGIN</span></p><p><a></a><span id="1-1924">  </span><span class="cyan bold" id="1-1925">SQL (1.7ms)</span><span id="1-1926">  </span><span class="bold" id="1-1927">INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"</span><span id="1-1928">
+  [["name", "Project 1"], ["user_id", 1], ["created_at", "2016-02-15 
+17:58:11.118584"], ["updated_at", "2016-02-15 17:58:11.118584"]]</span></p><p><a></a><span id="1-1929">  </span><span class="magenta bold" id="1-1930"> (2.0ms)</span><span id="1-1931">  COMMIT</span></p><p><a></a><span id="1-1932">  </span><span class="cyan bold" id="1-1933"> (1.1ms)</span><span id="1-1934">  </span><span class="bold" id="1-1935">BEGIN</span><span id="1-1936"></span></p><p><a></a><span id="1-1937">  </span><span class="magenta bold" id="1-1938">SQL (1.4ms)</span><span id="1-1939">
+  INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at")
+ VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Project 2"], 
+["user_id", 1], ["created_at", "2016-02-15 17:58:11.132113"], 
+["updated_at", "2016-02-15 17:58:11.132113"]]</span></p><p><a></a><span id="1-1940">  </span><span class="cyan bold" id="1-1941"> (1.8ms)</span><span id="1-1942">  </span><span class="bold" id="1-1943">COMMIT</span><span id="1-1944"></span></p><p><a></a><span id="1-1945">  </span><span class="magenta bold" id="1-1946"> (1.1ms)</span><span id="1-1947">  BEGIN</span></p><p><a></a><span id="1-1948">  </span><span class="cyan bold" id="1-1949">SQL (1.3ms)</span><span id="1-1950">  </span><span class="bold" id="1-1951">INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"</span><span id="1-1952">
+  [["name", "Project 3"], ["user_id", 1], ["created_at", "2016-02-15 
+17:58:11.140749"], ["updated_at", "2016-02-15 17:58:11.140749"]]</span></p><p><a></a><span id="1-1953">  </span><span class="magenta bold" id="1-1954"> (2.0ms)</span><span id="1-1955">  COMMIT</span></p><p><a></a><span id="1-1956">  </span><span class="cyan bold" id="1-1957"> (3.0ms)</span><span id="1-1958">  </span><span class="bold" id="1-1959">BEGIN</span><span id="1-1960"></span></p><p><a></a><span id="1-1961">  </span><span class="magenta bold" id="1-1962">SQL (2.7ms)</span><span id="1-1963">
+  INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at")
+ VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Project 4"], 
+["user_id", 1], ["created_at", "2016-02-15 17:58:11.157130"], 
+["updated_at", "2016-02-15 17:58:11.157130"]]</span></p><p><a></a><span id="1-1964">  </span><span class="cyan bold" id="1-1965"> (2.2ms)</span><span id="1-1966">  </span><span class="bold" id="1-1967">COMMIT</span><span id="1-1968"></span></p><p><a></a><span id="1-1969">  </span><span class="magenta bold" id="1-1970"> (1.1ms)</span><span id="1-1971">  BEGIN</span></p><p><a></a><span id="1-1972">  </span><span class="cyan bold" id="1-1973">SQL (1.4ms)</span><span id="1-1974">  </span><span class="bold" id="1-1975">INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"</span><span id="1-1976">
+  [["name", "Project 5"], ["user_id", 1], ["created_at", "2016-02-15 
+17:58:11.175012"], ["updated_at", "2016-02-15 17:58:11.175012"]]</span></p><p><a></a><span id="1-1977">  </span><span class="magenta bold" id="1-1978"> (2.5ms)</span><span id="1-1979">  COMMIT</span></p><p><a></a><span id="1-1980">  </span><span class="cyan bold" id="1-1981"> (1.8ms)</span><span id="1-1982">  </span><span class="bold" id="1-1983">BEGIN</span><span id="1-1984"></span></p><p><a></a><span id="1-1985">  </span><span class="magenta bold" id="1-1986">SQL (2.2ms)</span><span id="1-1987">
+  INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at")
+ VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Project 6"], 
+["user_id", 3], ["created_at", "2016-02-15 17:58:11.211142"], 
+["updated_at", "2016-02-15 17:58:11.211142"]]</span></p><p><a></a><span id="1-1988">  </span><span class="cyan bold" id="1-1989"> (2.0ms)</span><span id="1-1990">  </span><span class="bold" id="1-1991">COMMIT</span><span id="1-1992"></span></p><p><a></a><span id="1-1993">  </span><span class="magenta bold" id="1-1994"> (1.8ms)</span><span id="1-1995">  BEGIN</span></p><p><a></a><span id="1-1996">  </span><span class="cyan bold" id="1-1997">SQL (9.0ms)</span><span id="1-1998">  </span><span class="bold" id="1-1999">INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"</span><span id="1-2000">
+  [["name", "Project 7"], ["user_id", 4], ["created_at", "2016-02-15 
+17:58:11.264763"], ["updated_at", "2016-02-15 17:58:11.264763"]]</span></p><p><a></a><span id="1-2001">  </span><span class="magenta bold" id="1-2002"> (1.8ms)</span><span id="1-2003">  COMMIT</span></p><p><a></a><span id="1-2004">  </span><span class="cyan bold" id="1-2005"> (3.7ms)</span><span id="1-2006">  </span><span class="bold" id="1-2007">BEGIN</span><span id="1-2008"></span></p><p><a></a><span id="1-2009">  </span><span class="magenta bold" id="1-2010">SQL (3.8ms)</span><span id="1-2011">
+  INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at")
+ VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Project 8"], 
+["user_id", 6], ["created_at", "2016-02-15 17:58:11.300937"], 
+["updated_at", "2016-02-15 17:58:11.300937"]]</span></p><p><a></a><span id="1-2012">  </span><span class="cyan bold" id="1-2013"> (2.4ms)</span><span id="1-2014">  </span><span class="bold" id="1-2015">COMMIT</span><span id="1-2016"></span></p><p><a></a><span id="1-2017">  </span><span class="magenta bold" id="1-2018"> (3.4ms)</span><span id="1-2019">  BEGIN</span></p><p><a></a><span id="1-2020">  </span><span class="cyan bold" id="1-2021">SQL (1.3ms)</span><span id="1-2022">  </span><span class="bold" id="1-2023">INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"</span><span id="1-2024">
+  [["name", "Project 9"], ["user_id", 5], ["created_at", "2016-02-15 
+17:58:11.314891"], ["updated_at", "2016-02-15 17:58:11.314891"]]</span></p><p><a></a><span id="1-2025">  </span><span class="magenta bold" id="1-2026"> (1.8ms)</span><span id="1-2027">  COMMIT</span></p><p><a></a><span id="1-2028">  </span><span class="cyan bold" id="1-2029"> (1.1ms)</span><span id="1-2030">  </span><span class="bold" id="1-2031">BEGIN</span><span id="1-2032"></span></p><p><a></a><span id="1-2033">  </span><span class="magenta bold" id="1-2034">SQL (1.1ms)</span><span id="1-2035">
+  INSERT INTO "projects" ("name", "user_id", "created_at", "updated_at")
+ VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Project 10"], 
+["user_id", 5], ["created_at", "2016-02-15 17:58:11.322001"], 
+["updated_at", "2016-02-15 17:58:11.322001"]]</span></p><p><a></a><span id="1-2036">  </span><span class="cyan bold" id="1-2037"> (1.8ms)</span><span id="1-2038">  </span><span class="bold" id="1-2039">COMMIT</span><span id="1-2040"></span></p><p><a></a><span id="1-2041">  </span><span class="magenta bold" id="1-2042"> (1.1ms)</span><span id="1-2043">  BEGIN</span></p><p><a></a><span id="1-2044">  </span><span class="cyan bold" id="1-2045">SQL (3.7ms)</span><span id="1-2046">  </span><span class="bold" id="1-2047">INSERT
+ INTO "notifications" ("project_id", "title", "date", "message", 
+"read_mark", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6,
+ $7) RETURNING "id"</span><span id="1-2048">  [["project_id", 1], 
+["title", "Pedido de X"], ["date", "2015-05-03"], ["message", "se 
+presento tal cosa"], ["read_mark", "t"], ["created_at", "2016-02-15 
+17:58:11.347219"], ["updated_at", "2016-02-15 17:58:11.347219"]]</span></p><p><a></a><span id="1-2049">  </span><span class="magenta bold" id="1-2050"> (1.8ms)</span><span id="1-2051">  COMMIT</span></p><p><a></a><span id="1-2052">  </span><span class="cyan bold" id="1-2053"> (1.0ms)</span><span id="1-2054">  </span><span class="bold" id="1-2055">BEGIN</span><span id="1-2056"></span></p><p><a></a><span id="1-2057">  </span><span class="magenta bold" id="1-2058">SQL (1.4ms)</span><span id="1-2059">
+  INSERT INTO "notifications" ("project_id", "title", "date", "message",
+ "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"  [["project_id", 1], ["title", "Contra demanda"], ["date", 
+"2015-05-10"], ["message", "se presento tal otra"], ["created_at", 
+"2016-02-15 17:58:11.362002"], ["updated_at", "2016-02-15 
+17:58:11.362002"]]</span></p><p><a></a><span id="1-2060">  </span><span class="cyan bold" id="1-2061"> (4.9ms)</span><span id="1-2062">  </span><span class="bold" id="1-2063">COMMIT</span><span id="1-2064"></span></p><p><a></a><span id="1-2065">  </span><span class="magenta bold" id="1-2066"> (5.4ms)</span><span id="1-2067">  BEGIN</span></p><p><a></a><span id="1-2068">  </span><span class="cyan bold" id="1-2069">SQL (2.0ms)</span><span id="1-2070">  </span><span class="bold" id="1-2071">INSERT
+ INTO "notifications" ("project_id", "title", "date", "message", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"</span><span id="1-2072">  [["project_id", 1], ["title", "Accion 
+punitoria"], ["date", "2015-05-20"], ["message", "se presento tal otra 
+otra"], ["created_at", "2016-02-15 17:58:11.378659"], ["updated_at", 
+"2016-02-15 17:58:11.378659"]]</span></p><p><a></a><span id="1-2073">  </span><span class="magenta bold" id="1-2074"> (1.9ms)</span><span id="1-2075">  COMMIT</span></p><p><a></a><span id="1-2076">  </span><span class="cyan bold" id="1-2077"> (2.2ms)</span><span id="1-2078">  </span><span class="bold" id="1-2079">BEGIN</span><span id="1-2080"></span></p><p><a></a><span id="1-2081">  </span><span class="magenta bold" id="1-2082">SQL (2.2ms)</span><span id="1-2083">
+  INSERT INTO "notifications" ("project_id", "title", "date", "message",
+ "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"  [["project_id", 1], ["title", "pedido a juez"], ["date", 
+"2015-05-30"], ["message", "se presento tal otra otra otra"], 
+["created_at", "2016-02-15 17:58:11.387807"], ["updated_at", "2016-02-15
+ 17:58:11.387807"]]</span></p><p><a></a><span id="1-2084">  </span><span class="cyan bold" id="1-2085"> (6.2ms)</span><span id="1-2086">  </span><span class="bold" id="1-2087">COMMIT</span><span id="1-2088"></span></p><p><a></a><span id="1-2089">  </span><span class="magenta bold" id="1-2090"> (1.9ms)</span><span id="1-2091">  BEGIN</span></p><p><a></a><span id="1-2092">  </span><span class="cyan bold" id="1-2093">SQL (4.3ms)</span><span id="1-2094">  </span><span class="bold" id="1-2095">INSERT
+ INTO "notifications" ("project_id", "title", "date", "message", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"</span><span id="1-2096">  [["project_id", 1], ["title", "Resolución
+ del Juez"], ["date", "2015-06-10"], ["message", "El juez resolvio tal y
+ cual cosa"], ["created_at", "2016-02-15 17:58:11.400873"], 
+["updated_at", "2016-02-15 17:58:11.400873"]]</span></p><p><a></a><span id="1-2097">  </span><span class="magenta bold" id="1-2098"> (2.2ms)</span><span id="1-2099">  COMMIT</span></p><p><a></a><span id="1-2100">  </span><span class="cyan bold" id="1-2101"> (1.5ms)</span><span id="1-2102">  </span><span class="bold" id="1-2103">BEGIN</span><span id="1-2104"></span></p><p><a></a><span id="1-2105">  </span><span class="magenta bold" id="1-2106">SQL (1.6ms)</span><span id="1-2107">
+  INSERT INTO "notifications" ("project_id", "title", "date", "message",
+ "read_mark", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, 
+$6, $7) RETURNING "id"  [["project_id", 2], ["title", "Pedido de X"], 
+["date", "2015-05-04"], ["message", "se presento tal cosa"], 
+["read_mark", "t"], ["created_at", "2016-02-15 17:58:11.411864"], 
+["updated_at", "2016-02-15 17:58:11.411864"]]</span></p><p><a></a><span id="1-2108">  </span><span class="cyan bold" id="1-2109"> (1.9ms)</span><span id="1-2110">  </span><span class="bold" id="1-2111">COMMIT</span><span id="1-2112"></span></p><p><a></a><span id="1-2113">  </span><span class="magenta bold" id="1-2114"> (1.0ms)</span><span id="1-2115">  BEGIN</span></p><p><a></a><span id="1-2116">  </span><span class="cyan bold" id="1-2117">SQL (1.4ms)</span><span id="1-2118">  </span><span class="bold" id="1-2119">INSERT
+ INTO "notifications" ("project_id", "title", "date", "message", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"</span><span id="1-2120">  [["project_id", 2], ["title", "Contra 
+demanda"], ["date", "2015-05-11"], ["message", "se presento tal otra"], 
+["created_at", "2016-02-15 17:58:11.419715"], ["updated_at", "2016-02-15
+ 17:58:11.419715"]]</span></p><p><a></a><span id="1-2121">  </span><span class="magenta bold" id="1-2122"> (5.0ms)</span><span id="1-2123">  COMMIT</span></p><p><a></a><span id="1-2124">  </span><span class="cyan bold" id="1-2125"> (5.8ms)</span><span id="1-2126">  </span><span class="bold" id="1-2127">BEGIN</span><span id="1-2128"></span></p><p><a></a><span id="1-2129">  </span><span class="magenta bold" id="1-2130">SQL (1.5ms)</span><span id="1-2131">
+  INSERT INTO "notifications" ("project_id", "title", "date", "message",
+ "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"  [["project_id", 2], ["title", "Accion punitoria"], ["date", 
+"2015-05-21"], ["message", "se presento tal otra otra"], ["created_at", 
+"2016-02-15 17:58:11.438493"], ["updated_at", "2016-02-15 
+17:58:11.438493"]]</span></p><p><a></a><span id="1-2132">  </span><span class="cyan bold" id="1-2133"> (2.4ms)</span><span id="1-2134">  </span><span class="bold" id="1-2135">COMMIT</span><span id="1-2136"></span></p><p><a></a><span id="1-2137">  </span><span class="magenta bold" id="1-2138"> (1.1ms)</span><span id="1-2139">  BEGIN</span></p><p><a></a><span id="1-2140">  </span><span class="cyan bold" id="1-2141">SQL (1.2ms)</span><span id="1-2142">  </span><span class="bold" id="1-2143">INSERT
+ INTO "notifications" ("project_id", "title", "date", "message", 
+"created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"</span><span id="1-2144">  [["project_id", 2], ["title", "pedido a 
+juez"], ["date", "2015-05-31"], ["message", "se presento tal otra otra 
+otra"], ["created_at", "2016-02-15 17:58:11.446737"], ["updated_at", 
+"2016-02-15 17:58:11.446737"]]</span></p><p><a></a><span id="1-2145">  </span><span class="magenta bold" id="1-2146"> (3.6ms)</span><span id="1-2147">  COMMIT</span></p><p><a></a><span id="1-2148">  </span><span class="cyan bold" id="1-2149"> (1.3ms)</span><span id="1-2150">  </span><span class="bold" id="1-2151">BEGIN</span><span id="1-2152"></span></p><p><a></a><span id="1-2153">  </span><span class="magenta bold" id="1-2154">SQL (1.5ms)</span><span id="1-2155">
+  INSERT INTO "notifications" ("project_id", "title", "date", "message",
+ "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING 
+"id"  [["project_id", 2], ["title", "Resolución del Juez"], ["date", 
+"2015-06-11"], ["message", "El juez resolvio tal y cual cosa"], 
+["created_at", "2016-02-15 17:58:11.457394"], ["updated_at", "2016-02-15
+ 17:58:11.457394"]]</span></p><p><a></a><span id="1-2156">  </span><span class="cyan bold" id="1-2157"> (2.5ms)</span><span id="1-2158">  </span><span class="bold" id="1-2159">COMMIT</span><span id="1-2160"></span></p><p><a></a><span id="1-2161"></span></p></div><div class="fold-end" id="fold-end-dpl.6"></div><div class="fold-start fold active" id="fold-start-dpl.7"><span class="fold-name">dpl.7</span><p><a></a><span class="yellow" id="1-2164">Restarting application</span><span id="1-2165"></span></p><p><a></a><span id="1-2166"></span></p></div><div class="fold-end" id="fold-end-dpl.7"></div><p><a></a><span id="1-2168"># </span><span class="red" id="1-2169">HEAD detached at </span><span id="1-2170">031aa6c</span></p><p><a></a><span id="1-2171"># Changes not staged for commit:</span></p><p><a></a><span id="1-2172">#   (use "git add &lt;file&gt;..." to update what will be committed)</span></p><p><a></a><span id="1-2173">#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</span></p><p><a></a><span id="1-2174">#</span></p><p><a></a><span id="1-2175">#	</span><span class="red" id="1-2176">modified:   Gemfile.lock</span><span id="1-2177"></span></p><p><a></a><span id="1-2178">#	</span><span class="red" id="1-2179">modified:   coverage/.last_run.json</span><span id="1-2180"></span></p><p><a></a><span id="1-2181">#	</span><span class="red" id="1-2182">modified:   coverage/.resultset.json</span><span id="1-2183"></span></p><p><a></a><span id="1-2184">#</span></p><p><a></a><span id="1-2185">no changes added to commit (use "git add" and/or "git commit -a")</span></p><p><a></a><span id="1-2186">Dropped refs/stash@{0} (a30846069c22d44ca5b4bfb5a0da4462d611940b)</span></p><p><a></a><span id="1-2187"></span><span id="1-2188"></span></p><p><a></a><span id="1-2189"></span></p><p><a></a><span id="1-2190">Done. Your build exited with 0.</span></p></pre>
+
+          <a data-ember-action="1366" class="to-top" href="#">Top</a>
+      </div>
+    </div>
+
+<!---->  </div>
+</section>
+</div>
+</div>
+
+</div>
+        </div>
+      </main>
+    </article>
+
+</div>
+<div class="ember-view popup status-images" id="status-images"><a data-ember-action="1050" class="close" href="#"></a>
+<h3 class="small-title popup-title">Status Image</h3>
+<div class="form-pair">
+  <label class="form-label">Branch</label>
+    <div class="ember-view" id="ember1051"><span class="loading-indicator"><i></i><i></i><i></i></span>
+</div>
+</div>
+
+<div class="form-pair">
+  <label class="form-label">
+<select class="ember-view x-select" tabindex="0" id="ember1060">      <option selected="selected" class="ember-view x-option" value="Image URL" id="ember1069">Image URL</option>
+      <option class="ember-view x-option" value="Markdown" id="ember1070">Markdown</option>
+      <option class="ember-view x-option" value="Textile" id="ember1071">Textile</option>
+      <option class="ember-view x-option" value="Rdoc" id="ember1072">Rdoc</option>
+      <option class="ember-view x-option" value="AsciiDoc" id="ember1073">AsciiDoc</option>
+      <option class="ember-view x-option" value="RST" id="ember1074">RST</option>
+      <option class="ember-view x-option" value="Pod" id="ember1075">Pod</option>
+      <option class="ember-view x-option" value="CCTray" id="ember1076">CCTray</option>
+
+</select>
+  </label>
+  <textarea class="url ember-view ember-text-area" rows="3" id="ember1087">https://travis-ci.org/matiasmasca/Novedades.svg?branch=master</textarea>
+</div>
+</div>
+
+
+    </div>
+  </div>
+
+  <aside class="" id="left">
+    <div class="search search--sidebar">
+  <div class="search-inner">
+    <input class="ember-view ember-text-field" placeholder="Search all repositories" id="ember748" type="text">
+  </div>
+</div>
+
+<div class="ember-view" id="ember757"><div role="tablist" class="tabnav tabnav--sidebar">
+  <ul class="tab tabs--sidebar">
+    <li class="active display-inline" id="tab_owned">
+      <a data-ember-action="758" href="#">My Repositories</a>
+    </li>
+
+<!---->
+    <li class="display-inline" id="tab_new">
+<a class="ember-view" title="Add New Repository" href="https://travis-ci.org/profile" id="ember759">        <span class="icon icon--plus"></span>
+</a>    </li>
+  </ul>
+</div>
+</div>
+
+  <div class="tabbody sidebar-list">
+      <ul class="ember-view" id="ember1147">  <li class="ember-view repo" id="ember1157"><div class="tile passed">
+  <h2 class="tile-title passed">
+      <span class="ember-view status-icon icon passed" title="Job passed" aria-label="Job passed" id="ember1166">    <svg xml:space="preserve" viewBox="-1 -1 17 16" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-passed" version="1.1">
+    <g><polyline points="14.5,1.5 6.499,13.716 0.5,8.78 " id="passed" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"></polyline></g>
+    </svg>
+
+<!---->
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/NivelR/BlackHoleFinancialServer" id="ember1167">      <span class="label-align">NivelR/BlackHoleFinancialServer</span>
+</a>  </h2>
+
+      <p class="tile-title float-right passed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/NivelR/BlackHoleFinancialServer/builds/123234462" id="ember1168">          <span class="label-align">25</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-04-15T03:18:38Z" datetime="PT191S" class="duration">
+      3 min 11 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-04-15T03:21:49Z" datetime="2016-04-15T03:21:49Z" class="finished_at timeago">
+      8 days ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo" id="ember1170"><div class="tile failed">
+  <h2 class="tile-title failed">
+      <span class="ember-view status-icon icon failed" title="Job failed" aria-label="Job failed" id="ember1171"><!---->
+    <svg xml:space="preserve" viewBox="-1 -1 17 17" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-failed" version="1.1">
+    <g id="failed">
+    <line y2="14.5" x2="14.5" y1="0.5" x1="0.5"></line>
+    <line y2="14.5" x2="0.5" y1="0.5" x1="14.5"></line>
+    </g>
+    </svg>
+
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/Terciar/consul" id="ember1172">      <span class="label-align">Terciar/consul</span>
+</a>  </h2>
+
+      <p class="tile-title float-right failed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/Terciar/consul/builds/117513222" id="ember1173">          <span class="label-align">17</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-03-21T17:47:24Z" datetime="PT190S" class="duration">
+      3 min 10 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-03-21T17:50:34Z" datetime="2016-03-21T17:50:34Z" class="finished_at timeago">
+      about a month ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo" id="ember1175"><div class="tile errored">
+  <h2 class="tile-title errored">
+      <span class="ember-view status-icon icon errored" title="Job errored" aria-label="Job errored" id="ember1176"><!---->
+<!---->
+<!---->
+    <svg xml:space="preserve" viewBox="-1 -1 16 17" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-errored" version="1.1">
+    <g id="errored">
+    <circle r="0.97" cy="13.986" cx="7.5"></circle>
+    <line y2="10.646" x2="7.5" y1="0.5" x1="7.5"></line>
+    </g>
+    </svg>
+
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/vox" id="ember1177">      <span class="label-align">matiasmasca/vox</span>
+</a>  </h2>
+
+      <p class="tile-title float-right errored">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/vox/builds/109409260" id="ember1178">          <span class="label-align">323</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-02-15T18:06:31Z" datetime="PT337S" class="duration">
+      5 min 37 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-02-15T18:12:08Z" datetime="2016-02-15T18:12:08Z" class="finished_at timeago">
+      2 months ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo" id="ember1180"><div class="tile failed">
+  <h2 class="tile-title failed">
+      <span class="ember-view status-icon icon failed" title="Job failed" aria-label="Job failed" id="ember1181"><!---->
+    <svg xml:space="preserve" viewBox="-1 -1 17 17" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-failed" version="1.1">
+    <g id="failed">
+    <line y2="14.5" x2="14.5" y1="0.5" x1="0.5"></line>
+    <line y2="14.5" x2="0.5" y1="0.5" x1="14.5"></line>
+    </g>
+    </svg>
+
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/InscripcionesApp" id="ember1182">      <span class="label-align">matiasmasca/InscripcionesApp</span>
+</a>  </h2>
+
+      <p class="tile-title float-right failed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/InscripcionesApp/builds/109410047" id="ember1183">          <span class="label-align">101</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-02-15T18:03:22Z" datetime="PT188S" class="duration">
+      3 min 8 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-02-15T18:06:30Z" datetime="2016-02-15T18:06:30Z" class="finished_at timeago">
+      2 months ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo selected" id="ember1185"><div class="tile passed">
+  <h2 class="tile-title passed">
+      <span class="ember-view status-icon icon passed" title="Job passed" aria-label="Job passed" id="ember1186">    <svg xml:space="preserve" viewBox="-1 -1 17 16" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-passed" version="1.1">
+    <g><polyline points="14.5,1.5 6.499,13.716 0.5,8.78 " id="passed" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"></polyline></g>
+    </svg>
+
+<!---->
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view active" href="https://travis-ci.org/matiasmasca/Novedades" id="ember1187">      <span class="label-align">matiasmasca/Novedades</span>
+</a>  </h2>
+
+      <p class="tile-title float-right passed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/Novedades/builds/109408544" id="ember1188">          <span class="label-align">131</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-02-15T17:54:11Z" datetime="PT240S" class="duration">
+      4 min
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-02-15T17:58:11Z" datetime="2016-02-15T17:58:11Z" class="finished_at timeago">
+      2 months ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo" id="ember1190"><div class="tile passed">
+  <h2 class="tile-title passed">
+      <span class="ember-view status-icon icon passed" title="Job passed" aria-label="Job passed" id="ember1191">    <svg xml:space="preserve" viewBox="-1 -1 17 16" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-passed" version="1.1">
+    <g><polyline points="14.5,1.5 6.499,13.716 0.5,8.78 " id="passed" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"></polyline></g>
+    </svg>
+
+<!---->
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/cubaRendicionLaboratorio" id="ember1192">      <span class="label-align">matiasmasca/cubaRendicionLaboratorio</span>
+</a>  </h2>
+
+      <p class="tile-title float-right passed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/matiasmasca/cubaRendicionLaboratorio/builds/100832862" id="ember1193">          <span class="label-align">37</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2016-01-07T14:37:22Z" datetime="PT31S" class="duration">
+      31 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2016-01-07T14:37:53Z" datetime="2016-01-07T14:37:53Z" class="finished_at timeago">
+      4 months ago
+    </time></span>
+  </p>
+</div>
+</li>
+  <li class="ember-view repo" id="ember1195"><div class="tile passed">
+  <h2 class="tile-title passed">
+      <span class="ember-view status-icon icon passed" title="Job passed" aria-label="Job passed" id="ember1196">    <svg xml:space="preserve" viewBox="-1 -1 17 16" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="icon-passed" version="1.1">
+    <g><polyline points="14.5,1.5 6.499,13.716 0.5,8.78 " id="passed" style="stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"></polyline></g>
+    </svg>
+
+<!---->
+<!---->
+<!---->
+<!----></span>
+<a class="ember-view" href="https://travis-ci.org/railsrumble/r15-team-118" id="ember1197">      <span class="label-align">railsrumble/r15-team-118</span>
+</a>  </h2>
+
+      <p class="tile-title float-right passed">
+        <span class="icon-hash"></span>
+<a class="ember-view" href="https://travis-ci.org/railsrumble/r15-team-118/builds/90007352" id="ember1198">          <span class="label-align">59</span>
+</a>      </p>
+
+  <p>
+    <span class="icon-clock"></span>
+    <span class="label-align">Duration:
+    <time title="2015-11-09T00:17:34Z" datetime="PT228S" class="duration">
+      3 min 48 sec
+    </time></span>
+  </p>
+
+  <p>
+    <span class="icon-calendar"></span>
+    <span class="label-align">Finished:
+    <time title="2015-11-09T00:21:22Z" datetime="2015-11-09T00:21:22Z" class="finished_at timeago">
+      6 months ago
+    </time></span>
+  </p>
+</div>
+</li>
+</ul>
+  </div>
+
+
+  </aside>
+</div>
+
+<footer class="hidden">
+  <footer class="footer">
+  <div class="inner">
+    <div class="footer-elem">
+      <div aria-hidden="true" class="travis-footer"></div>
+    </div>
+
+      <div class="footer-elem">
+        <h3 class="footer-title">©Travis CI, GmbH</h3>
+        <p>Rigaer Straße 8<br>10247 Berlin, Germany <br>
+        <a href="https://docs.travis-ci.com/imprint.html">Imprint</a></p>
+      </div>
+    <div class="footer-elem">
+      <h3 class="footer-title">Help</h3>
+      <ul>
+        <li><a href="https://docs.travis-ci.com/">Documentation</a></li>
+          <li><a href="https://blog.travis-ci.com/">Blog</a></li>
+          <li><a href="mailto:support@travis-ci.com">Email</a></li>
+          <li><a href="https://twitter.com/travisci">Twitter</a></li>
+      </ul>
+    </div>
+<!---->
+      <div class="footer-elem">
+        <div class="ember-view" id="ember777">  <h3 class="footer-title">Travis CI Status</h3>
+  <ul>
+    <li><div class="status-circle none">Status:</div>
+        <a href="http://www.traviscistatus.com/">Travis CI Status</a>
+    </li>
+  </ul>
+</div>
+      </div>
+  </div>
+</footer>
+
+</footer>
+</div>
+</div></div></body></html>
